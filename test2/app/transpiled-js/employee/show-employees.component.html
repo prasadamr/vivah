@@ -1,0 +1,60 @@
+<h1>View Employee Details</h1>
+<table>
+    <tr>
+        <td>
+            Employee Code
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="selectedEmployee.EmployeeCode"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Employee Name
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="selectedEmployee.EmployeeName"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Salary
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="selectedEmployee.Salary"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Phone Number
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="selectedEmployee.PhoneNumber"/>
+        </td>
+    </tr>
+</table>
+<hr/>
+    Select
+    <select [(ngModel)]="selectedDesignation" (change)="onChange()">
+        <option value="0">All Employees</option>
+        <option value="1">Engineer</option>
+        <option value="2">Project Leader</option>
+        <option value="3">Project Manager</option>
+    </select>
+<hr/>
+<table border="1" width="90%">
+    <tr>
+        <th>Employee Code</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Phone Number</th>
+    </tr>
+
+    <tr *ngFor="let employee of fileterdEmployeesList">
+        <td><a (click)="onSelect(employee)">{{employee.EmployeeCode}}</a></td>
+        <td>{{employee.EmployeeName}}</td>
+        <td *ngIf="employee.Salary > 10000" style="background-color: green;">{{employee.Salary}}</td>
+        <td *ngIf="employee.Salary <= 10000" style="background-color: red;">{{employee.Salary}}</td>
+        <td>{{employee.PhoneNumber}}</td>
+    </tr>
+</table>
