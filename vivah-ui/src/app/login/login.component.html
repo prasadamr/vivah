@@ -4,20 +4,20 @@
             src="/images/logo.png" style="margin:0px;" />
 </tr>
 <tr>
+    <form #loginForm>
         <div class="card-block" align="center">
             <h4 class="card-title">ViVaah</h4>
             <p class="card-text">Janam Janam K Bhandhan </p>
 
-          <label>Enter Email Id:<input type="text" align="center"/></label><br>
+          <label>Enter Email Id:<input type="text" align="center" [(ngModel)]="loginModel.emailId" name="emailId" #emailId="ngModel"/></label><br>
             <br>
             <br>
-            <label>Enter Password:<input type="password" align="center"/></label><br>
+            <label>Enter Password:<input type="password" align="center" [(ngModel)]="loginModel.password" name="password" #password="ngModel"/></label><br>
             <br>
             <br>
-         <button class="btn btn-primary"
-             (click)="onLoginClick()">
-            Login
-            </button>
+         <input type="submit" class="btn btn-primary" (click)="onLoginClick()" value="Login">
+         <a [routerLink]="'/signUp'">Create an account</a>
         </div>
+    </form>
       </tr>
   </table>

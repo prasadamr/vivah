@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Login } from './login';
 
 
 @Component({
@@ -9,16 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginModel: Login;
 
-
-
-    constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    this.loginModel = {
+      emailId: '',
+      password: ''
+    };
+  }
 
   ngOnInit() {
   }
 
-  public onLoginClick(){
-          this.router.navigate(['./home']);
-      }
+  onLoginClick(){
+    this.router.navigate(['./home']);
+  }
 
 }

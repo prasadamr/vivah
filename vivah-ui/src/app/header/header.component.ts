@@ -17,9 +17,4 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  public viewSignUp(){
-          this.router.navigate(['./signUp']);
-      }
-
-
 }

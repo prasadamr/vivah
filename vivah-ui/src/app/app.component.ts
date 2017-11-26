@@ -7,8 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 
-  @Input() public isUserLoggedIn: boolean;
-
-
-//  title = 'app';
 }

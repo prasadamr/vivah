@@ -1,4 +1,4 @@
-<nav class="navbar" *ngIf="!isUserLoggedIn">
+<nav class="navbar">
 
 <table border="1" width="90%" align="center">
 
@@ -19,32 +19,3 @@
 
 </table>
 </nav>
-
-<nav class="navbar" *ngIf="isUserLoggedIn">
-  <table border="1" width="90%" align="center">
-<!---
-  <tr>
-    <td colspan="2" align="center" ><app-header></app-header>  <form class="btnLogout" align="right">
-        <button type="submit">Logout</button>
-      </form></td>
-  </tr>
-
--->
-
-  <tr>
-  <td width="20%" valign="top" align="center"><app-left-navigation></app-left-navigation></td>
-
-  <td align="center"><router-outlet></router-outlet>
-  </td>
-</tr>
-
-<!--
-  <tr>
-    <td colspan="2" align="center"><app-footer></app-footer>
-    </td>
-  </tr>
--->
-
-  </table>
-
-  </nav>

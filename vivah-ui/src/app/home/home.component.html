@@ -1,3 +1,15 @@
-<app-root [isUserLoggedIn]="true" ></app-root>
+<nav class="navbar">
+  <table border="1" width="90%" align="center">
 
-    Welcome, you are now logged in!!!
+
+  <tr>
+  <td width="20%" valign="top" align="center"><app-left-navigation></app-left-navigation></td>
+
+  <td align="center"><router-outlet></router-outlet>
+  </td>
+</tr>
+
+
+  </table>
+
+  </nav>

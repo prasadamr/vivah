@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {SignUpUser} from './signupuser';
 import { SignUpUserService } from './signupuser.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
 
   newSignUpUser : SignUpUser = {UserName: '', UserEmail: '', UserPhone: '', UserPwd: '', UserDob: '', UserGender: ''};
 
-  constructor(private _signUpUserService: SignUpUserService)
+  constructor(private _signUpUserService: SignUpUserService, private router: Router)
   {
 
   }
@@ -35,6 +36,10 @@ export class SignupComponent implements OnInit {
     else
       alert('Please Enter All the Fields');
 
+  }
+
+  onCancelClick() {
+    this.router.navigate(['./login']);
   }
 
   clearFields(): void{
