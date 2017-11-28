@@ -14,9 +14,9 @@ constructor(private _http: Http){
 }
 
 
- addSignUpUser(newSignUpUser:SignUpUser):any{
+ addSignUpUser(newSignUpUser:SignUpUser){
 
- return this._http.get("http://127.0.0.1/vivaah/index.php?action=addSignUpUser");
+ return this._http.post("http://127.0.0.1/vivaah/index.php?action=addSignUpUser",newSignUpUser);
 
  }
 
