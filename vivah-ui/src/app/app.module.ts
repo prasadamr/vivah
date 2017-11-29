@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SignupComponent } from './signup/signup.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,7 @@ import { SignupComponent } from './signup/signup.component';
     LeftNavigationComponent,
     LoginComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
   BrowserModule,

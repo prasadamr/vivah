@@ -3,6 +3,8 @@ import {SignUpUser} from './signupuser';
 import {Http, Headers, Response, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
+import { API_ROOT_PATH } from '../globals/constants';
+
 
 
 @Injectable()
@@ -14,10 +16,18 @@ constructor(private _http: Http){
 }
 
 
- addSignUpUser(newSignUpUser:SignUpUser){
+addSignUpUser(newSignUpUser:SignUpUser): any{
 
- return this._http.post("http://127.0.0.1/vivaah/index.php?action=addSignUpUser",newSignUpUser);
+   var params = "UserName="+newSignUpUser.UserName+"&UserEmail="+newSignUpUser.UserEmail+"&UserPhone="+newSignUpUser.UserPhone+"&UserPwd="+newSignUpUser.UserPwd+"&UserDob="+newSignUpUser.UserDob+"&UserGender="+newSignUpUser.UserGender;
 
+   var headers = new Headers();
+   headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+   return this._http.post(API_ROOT_PATH + "addSignUpUser", params, {headers: headers})
+             .map((reponse: Response) => reponse.json());
  }
+
+
+
 
 }

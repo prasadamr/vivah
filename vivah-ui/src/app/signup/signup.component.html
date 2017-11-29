@@ -4,28 +4,28 @@
 <tr><td align="center">SignUp to Create Your Account</td></tr>
 
 <tr>
-     <td><label>Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="UserName" [(ngModel)]="newSignUpUser.UserName" placeholder="Enter your Name" #userName="ngModel"/></td>
+     <td><label>Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="UserName" id="UserName" [(ngModel)]="newSignUpUser.UserName" placeholder="Enter your Name" #userName="ngModel"/></td>
 </tr>
 
 <tr>
-     <td><label>Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="UserEmail" [(ngModel)]="newSignUpUser.UserEmail" placeholder="Enter your Email Id" #userEmail="ngModel"/></td>
+     <td><label>Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="UserEmail" id="UserEmail" [(ngModel)]="newSignUpUser.UserEmail" placeholder="Enter your Email Id" #userEmail="ngModel"/></td>
 </tr>
 
 <tr>
-     <td><label>Phone No:</label>&nbsp;&nbsp;&nbsp;<input type="text" name="UserPhone" [(ngModel)]="newSignUpUser.UserPhone" placeholder="Enter your Contact Number" #phone="ngModel"/></td>
+     <td><label>Phone No:</label>&nbsp;&nbsp;&nbsp;<input type="text" name="UserPhone" id="UserPhone" [(ngModel)]="newSignUpUser.UserPhone" placeholder="Enter your Contact Number" #phone="ngModel"/></td>
 </tr>
 
 <tr>
-     <td><label>Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="UserPwd" [(ngModel)]="newSignUpUser.UserPwd" placeholder="Enter Password" #password="ngModel"/></td>
+     <td><label>Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="UserPwd" id="UserPwd" [(ngModel)]="newSignUpUser.UserPwd" placeholder="Enter Password" #password="ngModel"/></td>
 </tr>
 
 <tr>
-  <td><label>Date Of Birth:</label>&nbsp;&nbsp;<input type="date" [(ngModel)]="newSignUpUser.UserDob" name="UserDob" #dob="ngModel"/></td>
+  <td><label>Date Of Birth:</label>&nbsp;&nbsp;<input type="date" [(ngModel)]="newSignUpUser.UserDob" name="UserDob" id="UserDob" #dob="ngModel"/></td>
 </tr>
 
 <tr>
-<td><label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Male<input type="radio" class="check-gender" [value]="male" name="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/>&nbsp;&nbsp;&nbsp;&nbsp;
-Female<input type="radio" class="check-gender" value="female" name="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/></td>
+<td><label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Male<input type="radio" class="check-gender" [value]="male" name="UserGender" id="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/>&nbsp;&nbsp;&nbsp;&nbsp;
+Female<input type="radio" class="check-gender" value="female" name="UserGender" id="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/></td>
 </tr>
 
 <tr>

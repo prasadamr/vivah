@@ -21,11 +21,11 @@ export class SignupComponent {
   onAddSignUp(): void{
 
     if(this.newSignUpUser.UserName !="" && this.newSignUpUser.UserEmail !="" &&
-    this.newSignUpUser.UserPhone != "" && this.newSignUpUser.UserPwd !="" && this.newSignUpUser.UserDob != ""  && this.newSignUpUser.UserGender != ""){
-
+    this.newSignUpUser.UserPhone != "" && this.newSignUpUser.UserPwd !="" && this.newSignUpUser.UserDob != ""  && this.newSignUpUser.UserGender != "")
+    {
          this._signUpUserService.addSignUpUser(this.newSignUpUser)
                 .subscribe(
-                  data => alert(data.msg),
+                  data => alert(data),
                   error => alert(error),
                   () => console.log('')
                 );
