@@ -25,7 +25,7 @@ export class SignupComponent {
     {
          this._signUpUserService.addSignUpUser(this.newSignUpUser)
                 .subscribe(
-                  data => alert(data),
+                  data => alert("Congrats..Your account is created Successfully"),
                   error => alert(error),
                   () => console.log('')
                 );

@@ -25,9 +25,6 @@ addSignUpUser(newSignUpUser:SignUpUser): any{
 
    return this._http.post(API_ROOT_PATH + "addSignUpUser", params, {headers: headers})
              .map((reponse: Response) => reponse.json());
- }
-
-
-
+   }
 
 }

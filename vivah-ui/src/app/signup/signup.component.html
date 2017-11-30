@@ -8,8 +8,8 @@
 </tr>
 
 <tr>
-     <td><label>Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="UserEmail" id="UserEmail" [(ngModel)]="newSignUpUser.UserEmail" placeholder="Enter your Email Id" #userEmail="ngModel"/></td>
-</tr>
+     <td><label>Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="UserEmail" id="UserEmail" [(ngModel)]="newSignUpUser.UserEmail"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" placeholder="Enter your Email Id" #userEmail="ngModel"/></td>
+     </tr>
 
 <tr>
      <td><label>Phone No:</label>&nbsp;&nbsp;&nbsp;<input type="text" name="UserPhone" id="UserPhone" [(ngModel)]="newSignUpUser.UserPhone" placeholder="Enter your Contact Number" #phone="ngModel"/></td>
@@ -24,7 +24,7 @@
 </tr>
 
 <tr>
-<td><label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Male<input type="radio" class="check-gender" [value]="male" name="UserGender" id="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<td><label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Male<input type="radio" class="check-gender" value="male" name="UserGender" id="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/>&nbsp;&nbsp;&nbsp;&nbsp;
 Female<input type="radio" class="check-gender" value="female" name="UserGender" id="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/></td>
 </tr>
 
