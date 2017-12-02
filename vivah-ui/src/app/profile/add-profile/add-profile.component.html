@@ -1,0 +1,34 @@
+<form>
+  <h1>Add new Profile</h1>
+  <h6>Complete the following steps</h6>
+  <div>
+    <a href="javascript:void(0);" (click)="closeTabs(); isPersonalDetails=true;">Personal Details</a>
+    <div *ngIf="isPersonalDetails">
+      <app-personal-details [model]="personalDetails" (setModel)="personalDetails"></app-personal-details>
+    </div>
+  </div>
+  <div>
+    <a href="javascript:void(0);" (click)="closeTabs(); isReligionDetails=true;">Religion Details</a>
+    <div *ngIf="isReligionDetails">
+      
+    </div>
+  </div>
+  <div>
+    <a href="javascript:void(0);" (click)="closeTabs(); isFamilyDetails=true;">Family Details</a>
+    <div *ngIf="isFamilyDetails">
+      
+    </div>
+  </div>
+  <div>
+    <a href="javascript:void(0);" (click)="closeTabs(); isProfessionalDetails=true;">Professional Details</a>
+    <div *ngIf="isProfessionalDetails">
+      
+    </div>
+  </div>
+  <div>
+    <a href="javascript:void(0);" (click)="closeTabs(); isPartnerPreferences=true;">Partner Preferences</a>
+    <div *ngIf="isPartnerPreferences">
+      
+    </div>
+  </div>
+</form>

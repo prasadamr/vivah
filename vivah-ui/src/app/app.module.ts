@@ -23,7 +23,7 @@ import { SignupComponent } from './signup/signup.component';
     LeftNavigationComponent,
     LoginComponent,
     HomeComponent,
-    SignupComponent,
+    SignupComponent
   ],
   imports: [
   BrowserModule,

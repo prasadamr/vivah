@@ -1,39 +1,22 @@
 <table valign="top" width="100%" border="1">
 
-  <tr style="height:50px;">
-    <td align="center">
-        <a routerLink="/home">HOME</a>
-    </td>
-  </tr>
+  <th>
+    <a routerLink="/home">Home</a>
+  </th>
 
-  <tr style="height:50px;">
-    <td align="center">
-        <a routerLink="/aboutus">ABOUT US</a>
-    </td>
-  </tr>
+  <th align="center">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Profiles
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/home/profiles/add-profile">Add New Profile</a></li>
+        <li><a href="#">View Our Profiles</a></li>
+      </ul>
+    </div>
+  </th>
 
-  <tr style="height:50px;">
-    <td align="center">
-        <a routerLink="/contactus">CONTACT US</a>
-    </td>
-  </tr>
-
-  <tr style="height:50px;">
-    <td align="center">
-        <a routerLink="/help">HELP</a>
-    </td>
-  </tr>
-
-  <tr style="height:50px;">
-    <td align="center">
-        <a routerLink="/employee">EMPLOYEE</a>
-    </td>
-  </tr>
-
-  <tr style="height:50px;">
-    <td align="center">
-        <a routerLink="/login">LOGOUT</a>
-    </td>
-  </tr>
+  <th>
+    <a routerLink="/login">Signout</a>
+  </th>
 
 </table>
