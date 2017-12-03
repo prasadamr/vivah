@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginClick(){
-    this.router.navigate(['./home']);
+    this.router.navigate(['./layout']);
   }
 
 }

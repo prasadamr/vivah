@@ -4,13 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { LayoutComponent } from './layout/layout.component';
 
 const routes:Routes = [
 
    { path: 'login', component: LoginComponent},
-   { path: 'home', component: HomeComponent,
+   { path: 'layout', component: LayoutComponent,
     children: [
+      { path: 'home', component: HomeComponent },
       { path: 'profiles', loadChildren: 'app/profile/profile.module#ProfileModule' }
     ]  
    },

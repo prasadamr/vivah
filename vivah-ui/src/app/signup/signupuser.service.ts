@@ -3,9 +3,7 @@ import {SignUpUser} from './signupuser';
 import {Http, Headers, Response, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/map';
 
-import { API_ROOT_PATH } from '../globals/constants';
-
-
+import { environment } from '../../environments/environment';
 
 @Injectable()
 
@@ -23,7 +21,7 @@ addSignUpUser(newSignUpUser:SignUpUser): any{
    var headers = new Headers();
    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-   return this._http.post(API_ROOT_PATH + "addSignUpUser", params, {headers: headers})
+   return this._http.post(environment.API_ROOT_PATH + "addSignUpUser", params, {headers: headers})
              .map((reponse: Response) => reponse.json());
    }
 
