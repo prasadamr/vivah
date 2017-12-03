@@ -4,7 +4,7 @@
   <div>
     <a href="javascript:void(0);" (click)="closeTabs(); isPersonalDetails=true;">Personal Details</a>
     <div *ngIf="isPersonalDetails">
-      <app-personal-details [model]="personalDetails" (setModel)="personalDetails"></app-personal-details>
+      <app-personal-details [model]="personalDetails"></app-personal-details>
     </div>
   </div>
   <div>
