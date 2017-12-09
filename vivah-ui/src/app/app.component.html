@@ -1,21 +1,11 @@
-<nav class="navbar">
-
-<table border="1" width="90%" align="center">
-
-<tr>
-  <td colspan="2" align="center" ><app-header></app-header></td>
-</tr>
-
-<tr>
-
-  <router-outlet></router-outlet>
-
-</tr>
-
-<tr>
-  <td colspan="2" align="center"><app-footer></app-footer>
-  </td>
-</tr>
-
-</table>
-</nav>
+<div class="container-fluid" fxLayout="column">
+  <header>
+    <app-header></app-header>
+  </header>
+  <div fxFlex="1">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="footer">
+    <app-footer></app-footer>  
+  </footer>
+</div>

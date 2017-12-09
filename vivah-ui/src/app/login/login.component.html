@@ -1,23 +1,32 @@
-<table border="2" align="center">
-<tr>
-        <img class="logo" align="center"
-            src="/images/logo.png" style="margin:0px;" />
-</tr>
-<tr>
+
+<div class="login" fxLayout="row wrap" fxLayoutAlign="space-around center">
     <form #loginForm>
         <div class="card-block" align="center">
-            <h4 class="card-title">ViVaah</h4>
-            <p class="card-text">Janam Janam K Bhandhan </p>
-
-          <label>Enter Email Id:<input type="text" align="center" [(ngModel)]="loginModel.emailId" name="emailId" #emailId="ngModel"/></label><br>
-            <br>
-            <br>
-            <label>Enter Password:<input type="password" align="center" [(ngModel)]="loginModel.password" name="password" #password="ngModel"/></label><br>
-            <br>
-            <br>
-         <input type="submit" class="btn btn-primary" (click)="onLoginClick()" value="Login">
-         <a [routerLink]="'/signUp'">Create an account</a>
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" [(ngModel)]="loginModel.emailId" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+            <mat-form-field class="example-full-width">
+                <input type="password" matInput placeholder="Password" [(ngModel)]="loginModel.password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                <button mat-raised-button color="primary" (click)="onLoginClick()">Login</button>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                <a [routerLink]="'/signUp'" mat-button>Create an account</a>
+            </div> 
         </div>
     </form>
-      </tr>
-  </table>
+</div>

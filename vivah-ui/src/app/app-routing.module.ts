@@ -12,7 +12,8 @@ const routes:Routes = [
    { path: 'layout', component: LayoutComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'profiles', loadChildren: 'app/profile/profile.module#ProfileModule' }
+      { path: 'profiles', loadChildren: 'app/profile/profile.module#ProfileModule' },
+       {path:'**', redirectTo:'home'}
     ]  
    },
    { path: 'signUp', component: SignupComponent},

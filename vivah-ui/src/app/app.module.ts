@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from "@angular/http";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatMenuModule} from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
 
 //services
 import { SignUpUserService } from "./signup/signupuser.service";
@@ -33,7 +38,14 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    FlexLayoutModule,
+    MatMenuModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [SignUpUserService],
   bootstrap: [AppComponent]

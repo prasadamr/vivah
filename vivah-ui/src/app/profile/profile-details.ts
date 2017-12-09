@@ -16,6 +16,4 @@ export interface ProfileDetails {
     idRashi:number;
     idMothertongue:number;
     idSignUpUser:number;
-
-
 }

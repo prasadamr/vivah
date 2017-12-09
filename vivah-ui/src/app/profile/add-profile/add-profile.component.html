@@ -5,14 +5,14 @@
   <div>
     <a href="javascript:void(0);" (click)="closeTabs(); isPersonalDetails=true;">Personal Details</a>
     <div *ngIf="isPersonalDetails">
-      <app-personal-details [model]="personalDetails"></app-personal-details>
+      <app-personal-details [model]="profileDetails"></app-personal-details>
     </div>
   </div>
 
   <div>
     <a href="javascript:void(0);" (click)="closeTabs(); isReligionDetails=true;">Religion Details</a>
     <div *ngIf="isReligionDetails">
-      <app-religion-details [model] ="religionDetails"></app-religion-details>
+      <app-religion-details [model] ="profileDetails"></app-religion-details>
     </div>
   </div>
 

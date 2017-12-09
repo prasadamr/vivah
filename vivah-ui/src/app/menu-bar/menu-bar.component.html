@@ -1,22 +1,14 @@
-<table valign="top" width="100%" border="1">
 
-  <th>
-    <a routerLink="/layout/home">Home</a>
-  </th>
-
-  <th align="center">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Profiles
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a routerLink="/layout/profiles/add-profile">Add New Profile</a></li>
-        <li><a href="#">View Our Profiles</a></li>
-      </ul>
-    </div>
-  </th>
-
-  <th>
-    <a routerLink="/login">Signout</a>
-  </th>
-
-</table>
+<div class="blocks" fxFlex = "20%">
+  <a routerLink="/layout/home" mat-button>Home</a>
+</div>
+<div class="blocks" fxFlex = "60%" fxLayoutAlign="space-around center">
+  <button mat-button [matMenuTriggerFor]="menu">Profiles</button>
+  <mat-menu #menu="matMenu">
+    <a routerLink="/layout/profiles/add-profile" mat-menu-item>Add New Profile</a>
+    <a href="#" mat-menu-item>View Our Profiles</a>
+  </mat-menu>
+</div>
+<div class="blocks" fxFlex>
+  <a routerLink="/login" mat-button>Signout</a>
+</div>

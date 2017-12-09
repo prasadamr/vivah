@@ -7,7 +7,7 @@ import { ProfileDetails } from '../profile-details';
   styleUrls: ['./add-profile.component.css']
 })
 export class AddProfileComponent implements OnInit {
-  isProfileDetails: boolean;
+  isPersonalDetails: boolean;
   isReligionDetails: boolean;
   isFamilyDetails: boolean;
   isProfessionalDetails: boolean;
@@ -23,7 +23,7 @@ export class AddProfileComponent implements OnInit {
   closeTabs() {
     this.isFamilyDetails = false;
     this.isPartnerPreferences = false;
-    this.isProfileDetails = false;
+    this.isPersonalDetails = false;
     this.isProfessionalDetails = false;
     this.isReligionDetails = false;
   }
