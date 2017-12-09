@@ -47,7 +47,6 @@ export class AddProfileComponent implements OnInit {
       idRashi:null,
       idMothertongue:null,
       idSignUpUser:null
-
     };
   }
 

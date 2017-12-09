@@ -1,7 +1,10 @@
 <form>
-  <h1>Add new Profile</h1>
-  <h6>Complete the following steps</h6>
+  <mat-toolbar>
+    Add new Profile
+  </mat-toolbar>
 
+  <h6>Complete the following steps</h6>
+  
   <div>
     <a href="javascript:void(0);" (click)="closeTabs(); isPersonalDetails=true;">Personal Details</a>
     <div *ngIf="isPersonalDetails">
@@ -19,19 +22,26 @@
   <div>
     <a href="javascript:void(0);" (click)="closeTabs(); isFamilyDetails=true;">Family Details</a>
     <div *ngIf="isFamilyDetails">
+      <app-family-details [model] ="profileDetails"></app-family-details>
     </div>
   </div>
 
   <div>
     <a href="javascript:void(0);" (click)="closeTabs(); isProfessionalDetails=true;">Professional Details</a>
     <div *ngIf="isProfessionalDetails">
+      <app-professional-details [model] ="profileDetails"></app-professional-details>
     </div>
   </div>
 
   <div>
     <a href="javascript:void(0);" (click)="closeTabs(); isPartnerPreferences=true;">Partner Preferences</a>
     <div *ngIf="isPartnerPreferences">
+      <app-partner-preferences [model] ="profileDetails"></app-partner-preferences>
     </div>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <button mat-raised-button color="primary">Save</button>
   </div>
 
 </form>
