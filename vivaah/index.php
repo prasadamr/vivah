@@ -117,6 +117,141 @@
 		
 		
 		
+		private function getGender(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblgender Order By IdGender";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+		
+		
+		private function getMaritalStatus(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblmaritalstatus Order By IdMaritalStatus";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+	
+		
+		
+		
+		private function getEatingHabit(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tbleatinghabit Order By IdEatingHabit";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+	
+	
+	
+	
+		private function getDrinkingHabit(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tbldrinkinghabit Order By IdDrinkingHabit";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+	
+	
+	
+		private function getSmokingHabit(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblsmokinghabit Order By IdSmokingHabit";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+	
+		
+		
+		
+		
 		/*
 		 *	Encode array into JSON
 		*/
