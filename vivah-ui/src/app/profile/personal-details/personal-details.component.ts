@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PersonalDetails } from './personal-details';
+import { ProfileDetails } from '../profile-details';
 
 @Component({
   selector: 'app-personal-details',
@@ -7,7 +7,7 @@ import { PersonalDetails } from './personal-details';
   styleUrls: ['./personal-details.component.css']
 })
 export class PersonalDetailsComponent implements OnInit {
-  @Input() model: PersonalDetails;
+  @Input() model: ProfileDetails;
 
   constructor() { }
 

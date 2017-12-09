@@ -1,6 +1,79 @@
 <form>
+<table>
+<div class="person-details">
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" class="form-control" [(ngModel)]="model.name" id="name" name="name">
   </div>
+
+<br>
+
+<div class="form-group">
+<b>Gender:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="gender" class="radio-inline"><input type="radio" [(ngModel)]="model.gender" value="male" id="gender" name="gender">Male</label>&nbsp;&nbsp;
+<label for="gender" class="radio-inline"><input type="radio" [(ngModel)]="model.gender" value="female" id="gender" name="gender">Female</label>
+</div>
+<br>
+
+<div class="form-group">
+<label for="dob">Date of Birth:</label>
+<input type="date" class="form-control" [(ngModel)]="model.dob" id="dob" name="dob">
+</div>
+
+<br>
+
+<div class="form-group">
+<label for="maritalstatus">Marital status:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<select name="maritalstatus" id="maritalstatus" class="form_dropdown" data-placeholder="Select">
+    <option value="" label="" selected="selected"></option>
+    <option value="Never Married" label="Never Married">Never Married</option>
+    <option value="Divorced" label="Divorced">Divorced</option>
+    <option value="Widowed" label="Widowed">Widowed</option>
+    <option value="Awaiting Divorce" label="Awaiting Divorce">Awaiting Divorce</option>
+    <option value="Annulled" label="Annulled">Annulled</option>
+ </select>
+
+ </div>
+
+<br>
+<div class="form-group">
+<label for="height">Height:</label>
+<input type="text" class="form-control" [(ngModel)]="model.height" id="height" name="height">
+</div>
+
+<br>
+
+<div class="form-group">
+<b>Eating Habbit:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="eatingHabbits" class="radio-inline"><input type="radio" [(ngModel)]="model.eatingHabbits" value="male" id="eatingHabbits" name="eatingHabbits">Veg</label>
+<label for="eatingHabbits" class="radio-inline"><input type="radio" [(ngModel)]="model.eatingHabbits" value="female" id="eatingHabbits" name="eatingHabbits">Non-Veg</label>
+<label for="eatingHabbits" class="radio-inline"><input type="radio" [(ngModel)]="model.eatingHabbits" value="female" id="eatingHabbits" name="eatingHabbits">Both</label>
+</div>
+
+<br>
+
+<div class="form-group">
+<b>Drinking Habbit:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="drinking" class="radio-inline"><input type="radio" [(ngModel)]="model.drinking" value="male" id="drinking" name="drinking">Soft Drinks</label>&nbsp;&nbsp;
+<label for="drinking" class="radio-inline"><input type="radio" [(ngModel)]="model.drinking" value="female" id="drinking" name="drinking">Hot Drinks</label>
+</div>
+<br>
+
+<div class="form-group">
+<b>Are you Smoker:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="smoking" class="radio-inline"><input type="radio" [(ngModel)]="model.smoking" value="male" id="smoking" name="smoking">Yes</label>&nbsp;&nbsp;
+<label for="smoking" class="radio-inline"><input type="radio" [(ngModel)]="model.smoking" value="female" id="smoking" name="smoking">No</label>
+</div>
+<br>
+
+
+<div class="form-group">
+<label for="disability">Any Disability:</label>
+<textarea class="form-control" rows="5" [(ngModel)]="model.disability" id="disability" name="disability"></textarea>
+</div>
+
+  </div>
+</table>
+
 </form>

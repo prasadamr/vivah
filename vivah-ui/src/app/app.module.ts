@@ -12,9 +12,11 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
-import { AppRoutingModule } from './/app-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
+
+import { AppRoutingModule } from './/app-routing.module';
+
 
 @NgModule({
   declarations: [

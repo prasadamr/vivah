@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonalDetails } from '../personal-details/personal-details';
+import { ProfileDetails } from '../profile-details';
 
 @Component({
   selector: 'app-add-profile',
@@ -7,14 +7,15 @@ import { PersonalDetails } from '../personal-details/personal-details';
   styleUrls: ['./add-profile.component.css']
 })
 export class AddProfileComponent implements OnInit {
-  isPersonalDetails: boolean;
+  isProfileDetails: boolean;
   isReligionDetails: boolean;
   isFamilyDetails: boolean;
   isProfessionalDetails: boolean;
   isPartnerPreferences: boolean;
-  personalDetails: PersonalDetails;
 
-  constructor() { 
+  profileDetails: ProfileDetails;
+
+  constructor() {
     this.closeTabs();
     this.defaultValues();
   }
@@ -22,22 +23,31 @@ export class AddProfileComponent implements OnInit {
   closeTabs() {
     this.isFamilyDetails = false;
     this.isPartnerPreferences = false;
-    this.isPersonalDetails = false;
+    this.isProfileDetails = false;
     this.isProfessionalDetails = false;
     this.isReligionDetails = false;
   }
 
   defaultValues() {
-    this.personalDetails = {
-      disability: null,
-      dob: null,
-      drinking: null,
-      eatingHabbits: null,
-      gender: null,
-      height: null,
-      maritalStatus: null,
+    this.profileDetails = {
       name: null,
-      smoking: null
+      idGender: null,
+      dob: null,
+      idMaritalStatus: null,
+      height: null,
+      idEatingHabbits: null,
+      idDrinking: null,
+      idSmoking: null,
+      disability: null,
+      idReligion: null,
+      idCaste:null,
+      idSubCaste:null,
+      idGothra:null,
+      idNakshatra:null,
+      idRashi:null,
+      idMothertongue:null,
+      idSignUpUser:null
+
     };
   }
 
