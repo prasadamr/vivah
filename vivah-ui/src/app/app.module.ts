@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from "@angular/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {
+  MatButtonModule, 
+  MatCheckboxModule, 
+  MatRadioModule, 
+  MatMenuModule, 
+  MatInputModule
+} from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {MatMenuModule} from '@angular/material/menu';
-import {MatInputModule} from '@angular/material/input';
 
 //services
 import { SignUpUserService } from "./signup/signupuser.service";

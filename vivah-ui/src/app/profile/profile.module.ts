@@ -6,6 +6,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AddProfileRoutingModule } from './profile-routing.module';
 import { AddProfileComponent } from './add-profile/add-profile.component';
@@ -14,6 +15,7 @@ import { ReligionDetailsComponent } from './religion-details/religion-details.co
 import { FamilyDetailsComponent } from './family-details/family-details.component';
 import { ProfessionalDetailsComponent } from './professional-details/professional-details.component';
 import { PartnerPreferencesComponent } from './partner-preferences/partner-preferences.component';
+import { PersonalDetailsService } from './personal-details/personal-details.service';
 
 @NgModule({
   imports: [
@@ -25,12 +27,14 @@ import { PartnerPreferencesComponent } from './partner-preferences/partner-prefe
     FlexLayoutModule,
     MatMenuModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRadioModule
   ],
   declarations: [AddProfileComponent, PersonalDetailsComponent, ReligionDetailsComponent,
   PartnerPreferencesComponent,
   ProfessionalDetailsComponent,
   FamilyDetailsComponent
-  ]
+  ],
+  providers: [PersonalDetailsService],
 })
 export class ProfileModule { }
