@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 10, 2017 at 06:42 AM
+-- Generation Time: Dec 16, 2017 at 04:48 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `tbladministrator` (
 
 CREATE TABLE IF NOT EXISTS `tblcandidatefamilydetails` (
   `IdFamilyDetails` int(11) NOT NULL AUTO_INCREMENT,
-  `FamilyType` int(11) NOT NULL,
+  `IdFamilyType` int(11) NOT NULL,
   `FatherName` varchar(100) NOT NULL,
   `FatherOccupation` varchar(50) NOT NULL,
   `MotherName` varchar(100) NOT NULL,
@@ -117,7 +117,19 @@ CREATE TABLE IF NOT EXISTS `tblcaste` (
   `CasteName` varchar(50) NOT NULL,
   `IdReligion` int(11) NOT NULL,
   PRIMARY KEY (`IdCaste`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+--
+-- Dumping data for table `tblcaste`
+--
+
+INSERT INTO `tblcaste` (`IdCaste`, `CasteName`, `IdReligion`) VALUES
+(11, 'Adaviyar', 1),
+(12, 'Brahmin', 1),
+(13, 'Lingayath', 1),
+(14, 'Shetty', 1),
+(21, 'Banjara', 2),
+(22, 'Abdal', 2);
 
 -- --------------------------------------------------------
 
@@ -157,8 +169,7 @@ CREATE TABLE IF NOT EXISTS `tbleatinghabit` (
 
 INSERT INTO `tbleatinghabit` (`IdEatingHabit`, `EatingHabitName`) VALUES
 (111, 'Vegetarian'),
-(112, 'Non Vegetarian'),
-(113, 'Both');
+(112, 'Non Vegetarian');
 
 -- --------------------------------------------------------
 
@@ -183,6 +194,27 @@ CREATE TABLE IF NOT EXISTS `tblemployementtypes` (
   `EmployementType` varchar(50) NOT NULL,
   PRIMARY KEY (`IdEmployement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfamilytype`
+--
+
+CREATE TABLE IF NOT EXISTS `tblfamilytype` (
+  `IdFamilyType` int(11) NOT NULL,
+  `FamilyType` varchar(20) NOT NULL,
+  PRIMARY KEY (`IdFamilyType`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblfamilytype`
+--
+
+INSERT INTO `tblfamilytype` (`IdFamilyType`, `FamilyType`) VALUES
+(1, 'Nuclear Family'),
+(2, 'Joint Family'),
+(3, 'Extended Family');
 
 -- --------------------------------------------------------
 
@@ -384,7 +416,19 @@ CREATE TABLE IF NOT EXISTS `tblreligion` (
   `IdReligion` int(11) NOT NULL AUTO_INCREMENT,
   `ReligionName` varchar(50) NOT NULL,
   PRIMARY KEY (`IdReligion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `tblreligion`
+--
+
+INSERT INTO `tblreligion` (`IdReligion`, `ReligionName`) VALUES
+(1, 'Hinduism'),
+(2, 'Islam'),
+(3, 'Christianity'),
+(4, 'Sikhism'),
+(5, 'Buddhism'),
+(6, 'Jain');
 
 -- --------------------------------------------------------
 
@@ -417,7 +461,17 @@ CREATE TABLE IF NOT EXISTS `tblsubcaste` (
   `SubCasteName` varchar(50) NOT NULL,
   `IdCaste` int(11) NOT NULL,
   PRIMARY KEY (`IdSubCaste`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=115 ;
+
+--
+-- Dumping data for table `tblsubcaste`
+--
+
+INSERT INTO `tblsubcaste` (`IdSubCaste`, `SubCasteName`, `IdCaste`) VALUES
+(111, 'Daivagna Brahmin', 12),
+(112, 'Havyak', 12),
+(113, 'Veerashaiva Banajiga', 13),
+(114, 'Veerashaiva Panchamasali', 13);
 
 -- --------------------------------------------------------
 
@@ -434,7 +488,7 @@ CREATE TABLE IF NOT EXISTS `tbluseraccount` (
   `userDob` date NOT NULL,
   `userGender` varchar(10) NOT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `tbluseraccount`
@@ -451,7 +505,9 @@ INSERT INTO `tbluseraccount` (`userId`, `userName`, `userEmail`, `userPhone`, `u
 (8, 'vilas', 'vilas', '44445', 'vm,v,', '2017-11-13', 'male'),
 (10, 'varun', 'sdss', '8465', 'nxcm,mn', '2017-11-20', 'male'),
 (11, 'vachana', 'vcvjkx', '798654', 'nbmbc,', '2017-12-13', 'female'),
-(12, 'nandini', 'ndsscnnm', '534545', 'bsmncbSJC', '2017-12-12', 'female');
+(12, 'nandini', 'ndsscnnm', '534545', 'bsmncbSJC', '2017-12-12', 'female'),
+(13, 'sindu', 'nmnkj', '535435', 'bmnbm', '2017-12-13', 'female'),
+(14, 'renuka', 'nandinimr@gmail.com', '9874546545', 'mnnohaea', '0000-00-00', 'Female');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
