@@ -1,0 +1,18 @@
+a:hover{
+  background-color: blue;
+  color: white;
+}
+
+button:hover{
+  background-color: blue;
+  color: white;
+}
+
+.mat-menu-item:hover{
+  background-color: blue;
+  color: white;
+}
+
+.mat-button:active{
+  background-color: hotpink;
+}

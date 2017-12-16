@@ -1,1 +1,166 @@
-<h6>Partner Preferences</h6>
+<div class="partner-preference" fxLayout="row wrap" fxLayoutAlign="space-around center">
+<form #partnerPreference>
+  <div class="card-block" align="center">
+<br>
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center" align="center">
+      <mat-radio-group>
+              <mat-radio-button class="example-margin" value="start">Male</mat-radio-button>
+              <mat-radio-button class="example-margin" value="end">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center" align="center">
+  <table align="center">
+    <td><mat-form-field>
+      <input type="number" matInput placeholder="Minimum Age" min="19" step="1" [(ngModel)]="model.height" id="height" name="height">
+    </mat-form-field><td>
+    <td><mat-form-field><input type="number" matInput placeholder="Maximum Age" min="19" step="1" [(ngModel)]="model.height" id="height" name="height">
+    </mat-form-field><td>
+  </table>
+</div>
+
+    <br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <section class="example-section">
+      <mat-checkbox class="example-margin">Never Married</mat-checkbox>
+      <mat-checkbox class="example-margin">Widowed</mat-checkbox>
+      <mat-checkbox class="example-margin">Divorced</mat-checkbox>
+      <mat-checkbox class="example-margin">Awaiting Divorce</mat-checkbox>
+    </section>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center" align="center">
+  <table align="center">
+    <td><mat-form-field>
+      <input type="number" matInput placeholder="Minimum Height" min="3.0" step="0.1">
+    </mat-form-field><td>
+    <td><mat-form-field><input type="number" matInput placeholder="Maximum Height" min="3.0" step="0.1">
+    </mat-form-field><td>
+  </table>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+<mat-radio-group>
+        <mat-radio-button class="example-margin" value="start">Vegetarian</mat-radio-button>
+        <mat-radio-button class="example-margin" value="end">Non Vegetarian</mat-radio-button>
+</mat-radio-group>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+<mat-radio-group>
+        <mat-radio-button class="example-margin" value="start">Soft Drinks</mat-radio-button>
+        <mat-radio-button class="example-margin" value="end">Hot Drinks</mat-radio-button>
+</mat-radio-group>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-radio-group>
+          <mat-radio-button class="example-margin" value="start">Yes</mat-radio-button>
+          <mat-radio-button class="example-margin" value="end">No</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<br>
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <mat-form-field>
+         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Mother Tongue">
+      </mat-form-field>
+    </div>
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select id="maritalstatus" name="maritalstatus" placeholder="Prefered Religion">
+        <mat-option></mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+<br>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Prefered Caste">
+        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Prefered Sub-Caste">
+        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <mat-form-field>
+         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Prefered Gotra">
+      </mat-form-field>
+    </div>
+
+<br>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Prefered Nakshatra">
+        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Prefered Rashi">
+        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Qualification">
+        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Prefered Job">
+        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+</div>
+</form>
+</div>

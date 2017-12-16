@@ -1,39 +1,39 @@
-<form>
-  <mat-toolbar>
-    Add new Profile
-  </mat-toolbar>
+<form align="center">
+  <div class="page-header" align="center" margin="10px">
+  <h1>Add New Profile</h1>
+ </div>
 
-  <h6>Complete the following steps</h6>
-  
-  <div>
+ <h4>Complete the following steps</h4>
+
+  <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isPersonalDetails=true;">Personal Details</a>
     <div *ngIf="isPersonalDetails">
       <app-personal-details [model]="profileDetails"></app-personal-details>
     </div>
   </div>
 
-  <div>
+    <div align="center">
+      <a href="javascript:void(0);" (click)="closeTabs(); isFamilyDetails=true;">Family Details</a>
+      <div *ngIf="isFamilyDetails">
+        <app-family-details [model] ="profileDetails"></app-family-details>
+      </div>
+    </div>
+
+  <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isReligionDetails=true;">Religion Details</a>
     <div *ngIf="isReligionDetails">
       <app-religion-details [model] ="profileDetails"></app-religion-details>
     </div>
   </div>
 
-  <div>
-    <a href="javascript:void(0);" (click)="closeTabs(); isFamilyDetails=true;">Family Details</a>
-    <div *ngIf="isFamilyDetails">
-      <app-family-details [model] ="profileDetails"></app-family-details>
-    </div>
-  </div>
-
-  <div>
+  <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isProfessionalDetails=true;">Professional Details</a>
     <div *ngIf="isProfessionalDetails">
       <app-professional-details [model] ="profileDetails"></app-professional-details>
     </div>
   </div>
 
-  <div>
+  <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isPartnerPreferences=true;">Partner Preferences</a>
     <div *ngIf="isPartnerPreferences">
       <app-partner-preferences [model] ="profileDetails"></app-partner-preferences>

@@ -1,93 +1,74 @@
-<form>
-<table>
-<div class="religion-details">
+<div class="religion-details" fxLayout="row wrap" fxLayoutAlign="space-around center">
+<form #religionDetails>
+  <div class="card-block" align="center">
 
-  <div class="form-group">
-  <label for="religionstatus">Select Your Religion:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <select name="religionstatus" id="religionstatus" class="form_dropdown" data-placeholder="Select">
-      <option value="" label="" selected="selected"></option>
-      <option value="Hindu" label="Hindu">Hindu</option>
-      <option value="Muslim" label="Muslim">Muslim</option>
-      <option value="Christ" label="Christ">Christ</option>
-      <option value="Jain" label="Jain">Jain</option>
-      <option value="Sikh" label="Sikh">Sikh</option>
-   </select>
-   </div>
-
-
-   <div class="form-group">
-   <label for="castestatus">Select Your Caste:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <select name="castestatus" id="castestatus" class="form_dropdown" data-placeholder="Select">
-       <option value="" label="" selected="selected"></option>
-       <option value="Hindu" label="Hindu">Brahmin</option>
-       <option value="Muslim" label="Muslim">Muslim</option>
-       <option value="Christ" label="Christ">Christ</option>
-       <option value="Jain" label="Jain">Jain</option>
-       <option value="Sikh" label="Sikh">Sikh</option>
-    </select>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="religiontypes" name="religiontypes" placeholder="Select Your Religion">
+        <mat-option *ngFor="let item of religion" [value]="item.IdReligion">{{item.ReligionName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
     </div>
-
-    <div class="form-group">
-    <label for="castestatus">Select Your Sub Caste:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <select name="castestatus" id="castestatus" class="form_dropdown" data-placeholder="Select">
-        <option value="" label="" selected="selected"></option>
-        <option value="Hindu" label="Hindu">Brahmin</option>
-        <option value="Muslim" label="Muslim">Muslim</option>
-        <option value="Christ" label="Christ">Christ</option>
-        <option value="Jain" label="Jain">Jain</option>
-        <option value="Sikh" label="Sikh">Sikh</option>
-     </select>
-     </div>
-
 <br>
-  <div class="form-group">
-    <label for="name">Gotra:</label>
-    <input type="text" class="form-control" [(ngModel)]="model.name" id="name" name="name">
-  </div>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="castetypes" name="castetypes" placeholder="Select Your Caste">
+        <mat-option *ngFor="let item of caste" [value]="item.IdCaste">{{item.CasteName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
 
 <br>
 
 
-<div class="form-group">
-<label for="castestatus">Select Your Star(Nakshatra):</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select name="castestatus" id="castestatus" class="form_dropdown" data-placeholder="Select">
-    <option value="" label="" selected="selected"></option>
-    <option value="Hindu" label="Hindu">Brahmin</option>
-    <option value="Muslim" label="Muslim">Muslim</option>
-    <option value="Christ" label="Christ">Christ</option>
-    <option value="Jain" label="Jain">Jain</option>
-    <option value="Sikh" label="Sikh">Sikh</option>
- </select>
- </div>
-
-
- <div class="form-group">
- <label for="castestatus">Select Your Rashi:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <select name="castestatus" id="castestatus" class="form_dropdown" data-placeholder="Select">
-     <option value="" label="" selected="selected"></option>
-     <option value="Hindu" label="Hindu">Brahmin</option>
-     <option value="Muslim" label="Muslim">Muslim</option>
-     <option value="Christ" label="Christ">Christ</option>
-     <option value="Jain" label="Jain">Jain</option>
-     <option value="Sikh" label="Sikh">Sikh</option>
-  </select>
-  </div>
-
-
-
-   <div class="form-group">
-   <label for="castestatus">Select Your Mother tongue:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <select name="castestatus" id="castestatus" class="form_dropdown" data-placeholder="Select">
-       <option value="" label="" selected="selected"></option>
-       <option value="Hindu" label="Hindu">Brahmin</option>
-       <option value="Muslim" label="Muslim">Muslim</option>
-       <option value="Christ" label="Christ">Christ</option>
-       <option value="Jain" label="Jain">Jain</option>
-       <option value="Sikh" label="Sikh">Sikh</option>
-    </select>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="subcastetypes" name="subcastetypes" placeholder="Select Your Sub-Caste">
+        <mat-option *ngFor="let item of subcaste" [value]="item.IdSubCaste">{{item.SubCasteName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
     </div>
 
-  </div>
-</table>
+<br>
 
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <mat-form-field>
+         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Type Your Gotra">
+      </mat-form-field>
+    </div>
+
+<br>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="nakshatra" name="nakshatra" placeholder="Select Your Nakshatra">
+        <mat-option *ngFor="let item of nakshatra" [value]="item.IdNakshatra">{{item.NakshatraName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="rashi" name="rashi" placeholder="Select Your Rashi">
+        <mat-option *ngFor="let item of rashi" [value]="item.IdRashi">{{item.RashiName}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+
+<br>
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <mat-form-field>
+         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Mother Tongue">
+      </mat-form-field>
+    </div>
+<br>
+</div>
 </form>
+</div>

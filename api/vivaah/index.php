@@ -247,7 +247,174 @@
 			
 			$this->response('',204);	// If no records "No Content" status
 		}
+		
+		
+		
+		
+		
+		//family type
+		
+		private function getFamily(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblfamilytype Order By IdFamilyType";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
 	
+		
+		//getReligion
+		
+		
+		private function getReligion(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblreligion Order By IdReligion";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+		
+		//getCaste
+		
+		
+		
+		private function getCaste(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblcaste Order By IdCaste";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+		
+		private function getSubCaste(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblsubcaste Order By IdSubCaste";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+
+
+
+         private function getNakshatra(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblnakshatra Order By IdNakshatra";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+        
+         private function getRashi(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblrashi Order By IdRashi";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
 		
 		
 		

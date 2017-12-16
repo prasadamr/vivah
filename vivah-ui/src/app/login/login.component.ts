@@ -19,7 +19,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent implements OnInit {
   loginModel: Login;
 
-  constructor(private router: Router) { 
+  constructor(private router: Router) {
     this.loginModel = {
       emailId: '',
       password: ''

@@ -1,39 +1,75 @@
-<form #signupForm>
-<table border="2" align="center">
+<div class="signup-details" fxLayout="row wrap" fxLayoutAlign="space-around center">
 
-<tr><td align="center">SignUp to Create Your Account</td></tr>
+  <form #signupForm>
 
-<tr>
-     <td><label>Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="UserName" id="UserName" [(ngModel)]="newSignUpUser.UserName" placeholder="Enter your Name" #userName="ngModel"/></td>
-</tr>
+<h4>SignUp to Create Your Account</h4>
+<div class="card-block" align="center">
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
 
-<tr>
-     <td><label>Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="UserEmail" id="UserEmail" [(ngModel)]="newSignUpUser.UserEmail"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" placeholder="Enter your Email Id" #userEmail="ngModel"/></td>
-     </tr>
+       <mat-form-field>
+          <input matInput  name="UserName" id="UserName" [(ngModel)]="newSignUpUser.UserName" placeholder="Enter your Name" #userName="ngModel">
+       </mat-form-field>
 
-<tr>
-     <td><label>Phone No:</label>&nbsp;&nbsp;&nbsp;<input type="text" name="UserPhone" id="UserPhone" [(ngModel)]="newSignUpUser.UserPhone" placeholder="Enter your Contact Number" #phone="ngModel"/></td>
-</tr>
+</div>
+<br>
 
-<tr>
-     <td><label>Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="UserPwd" id="UserPwd" [(ngModel)]="newSignUpUser.UserPwd" placeholder="Enter Password" #password="ngModel"/></td>
-</tr>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+<mat-form-field class="example-full-width">
 
-<tr>
-  <td><label>Date Of Birth:</label>&nbsp;&nbsp;<input type="date" [(ngModel)]="newSignUpUser.UserDob" name="UserDob" id="UserDob" #dob="ngModel"/></td>
-</tr>
+    <input matInput placeholder="Email"  name="UserEmail" id="UserEmail" [(ngModel)]="newSignUpUser.UserEmail" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+    Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+    Email is <strong>required</strong>
+    </mat-error>
+</mat-form-field>
+</div>
+<br>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+<mat-form-field class="example-full-width">
 
-<tr>
-<td><label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Male<input type="radio" class="check-gender" value="male" name="UserGender" id="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/>&nbsp;&nbsp;&nbsp;&nbsp;
-Female<input type="radio" class="check-gender" value="female" name="UserGender" id="UserGender" [(ngModel)]="newSignUpUser.UserGender" #gender="ngModel"/></td>
-</tr>
+    <input type="password" matInput placeholder="Password" name="UserPwd" id="UserPwd" [(ngModel)]="newSignUpUser.UserPwd" [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+    Password is <strong>required</strong>
+    </mat-error>
+</mat-form-field>
+</div>
 
-<tr>
-    <td align="center">
-      <input type="submit" name="addSignUp" (click)="onAddSignUp()" value="Submit"/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" (click)="onCancelClick()" name="cancel" value="Cancel"/>
-     </td>
-</tr>
+<br>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
 
-</table>
+       <mat-form-field>
+          <input matInput name="UserPhone" id="UserPhone" [(ngModel)]="newSignUpUser.UserPhone" placeholder="Enter Phone Number">
+       </mat-form-field>
+
+</div>
+<br>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [(ngModel)]="newSignUpUser.UserDob" name="UserDob" id="UserDob">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker touchUi="true" #picker></mat-datepicker>
+</mat-form-field>
+</div>
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+
+&nbsp;<mat-radio-group class="example-radio-group" [(ngModel)]="newSignUpUser.UserGender" name="UserGender" id="UserGender">
+  <mat-radio-button class="example-radio-button" *ngFor="let type of Gender" [value]="type">
+    &nbsp;{{type}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </mat-radio-button>
+</mat-radio-group>
+</div>
+
+<br>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <button mat-raised-button color="primary" name="addSignUp" (click)="onAddSignUp()">Submit</button>
+    <button mat-raised-button color="primary" (click)="onCancelClick()" name="cancel">Cancel</button>
+</div>
+
+</div>
 </form>
+</div>

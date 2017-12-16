@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProfileDetails } from '../profile-details';
-
+import { FamilyDetailsService } from './family-details.service';
 @Component({
   selector: 'app-family-details',
   templateUrl: './family-details.component.html',
@@ -9,9 +9,29 @@ import { ProfileDetails } from '../profile-details';
 export class FamilyDetailsComponent implements OnInit {
   @Input() model : ProfileDetails;
 
-  constructor() { }
+familyType:any[];
+
+
+  constructor(private service:FamilyDetailsService) {
+
+this.familyType = [];
+this.getFamilyType();
+
+   }
 
   ngOnInit() {
   }
+
+  getFamilyType(){
+    this.service.getFamilyType().subscribe(
+      (response)=> {
+        this.familyType = response;
+      },
+      (error) => {
+        alert("Get Family Types failed");
+      }
+    );
+  }
+
 
 }

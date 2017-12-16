@@ -1,1 +1,83 @@
-<h6>Family Details</h6>
+
+   <div class="family-details" fxLayout="row wrap" fxLayoutAlign="space-around center">
+<form #familyDetails>
+  <div class="card-block" align="center">
+
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Choose Family Type">
+        <mat-option *ngFor="let item of familyType" [value]="item.IdFamilyType">{{item.FamilyType}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
+<br>
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <mat-form-field>
+         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Father Name">
+      </mat-form-field>
+    </div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+
+  <mat-form-field>
+     <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Father Occupation">
+  </mat-form-field>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <mat-form-field>
+     <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Mother Name">
+  </mat-form-field>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+
+  <mat-form-field>
+     <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Mother Occupation">
+  </mat-form-field>
+</div>
+
+<br>
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <table>
+<td><mat-form-field>
+  <input type="number" matInput placeholder="Total Brothers" min="1" step="1" [(ngModel)]="model.height" id="height" name="height">
+</mat-form-field><td>
+<td><mat-form-field><input type="number" matInput placeholder="Married Brothers" min="1" step="1" [(ngModel)]="model.height" id="height" name="height">
+</mat-form-field><td>
+</table>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  <table>
+<td><mat-form-field>
+  <input type="number" matInput placeholder="Total Sisters" min="1" step="1" [(ngModel)]="model.height" id="height" name="height">
+</mat-form-field><td>
+<td><mat-form-field><input type="number" matInput placeholder="Married Sisters" min="1" step="1" [(ngModel)]="model.height" id="height" name="height">
+</mat-form-field><td>
+</table>
+</div>
+
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+<mat-form-field>
+<textarea class="form-control" matInput [(ngModel)]="model.disability" id="disability" name="disability" placeholder="Family Address"></textarea>
+</mat-form-field>
+</div>
+<br>
+</div>
+</form>
+</div>
