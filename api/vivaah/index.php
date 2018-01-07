@@ -1,4 +1,5 @@
 <?php
+	error_reporting(E_ALL ^ E_DEPRECATED);
     header("Access-Control-Allow-Origin: *");
 	
 	require_once("Rest.inc.php");
