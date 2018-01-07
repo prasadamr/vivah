@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileDetails } from '../profile-details';
 
 @Component({
   selector: 'app-partner-preferences',
@@ -7,7 +6,7 @@ import { ProfileDetails } from '../profile-details';
   styleUrls: ['./partner-preferences.component.css']
 })
 export class PartnerPreferencesComponent implements OnInit {
-  @Input() model : ProfileDetails;
+  @Input() model : any;
 
   constructor() { }
 

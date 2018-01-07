@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileDetails } from '../profile-details';
 import { FamilyDetailsService } from './family-details.service';
+
 @Component({
   selector: 'app-family-details',
   templateUrl: './family-details.component.html',
   styleUrls: ['./family-details.component.css']
 })
 export class FamilyDetailsComponent implements OnInit {
-  @Input() model : ProfileDetails;
+  @Input() model : any;
 
 familyType:any[];
 

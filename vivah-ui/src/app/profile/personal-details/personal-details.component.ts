@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileDetails } from '../profile-details';
 import {PersonalDetailsService} from './personal-details.service';
 
 @Component({
@@ -8,7 +7,7 @@ import {PersonalDetailsService} from './personal-details.service';
   styleUrls: ['./personal-details.component.css']
 })
 export class PersonalDetailsComponent implements OnInit {
-  @Input() model: ProfileDetails;
+  @Input() model: any;
   genders: any[];
 
   maritalstatus:any[];

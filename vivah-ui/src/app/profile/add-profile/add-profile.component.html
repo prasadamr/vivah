@@ -8,40 +8,40 @@
   <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isPersonalDetails=true;">Personal Details</a>
     <div *ngIf="isPersonalDetails">
-      <app-personal-details [model]="profileDetails"></app-personal-details>
+      <app-personal-details [model]="personalDetails"></app-personal-details>
     </div>
   </div>
 
     <div align="center">
       <a href="javascript:void(0);" (click)="closeTabs(); isFamilyDetails=true;">Family Details</a>
       <div *ngIf="isFamilyDetails">
-        <app-family-details [model] ="profileDetails"></app-family-details>
+        <app-family-details [model] ="familyDetails"></app-family-details>
       </div>
     </div>
 
   <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isReligionDetails=true;">Religion Details</a>
     <div *ngIf="isReligionDetails">
-      <app-religion-details [model] ="profileDetails"></app-religion-details>
+      <app-religion-details [model] ="personalDetails"></app-religion-details>
     </div>
   </div>
 
   <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isProfessionalDetails=true;">Professional Details</a>
     <div *ngIf="isProfessionalDetails">
-      <app-professional-details [model] ="profileDetails"></app-professional-details>
+      <app-professional-details [model] ="professionalDetails"></app-professional-details>
     </div>
   </div>
 
   <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isPartnerPreferences=true;">Partner Preferences</a>
     <div *ngIf="isPartnerPreferences">
-      <app-partner-preferences [model] ="profileDetails"></app-partner-preferences>
+      <app-partner-preferences [model] ="partnerPreference"></app-partner-preferences>
     </div>
   </div>
 
   <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
   </div>
 
 </form>

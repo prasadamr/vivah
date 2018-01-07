@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileDetails } from '../profile-details';
 
 @Component({
   selector: 'app-professional-details',
@@ -7,7 +6,7 @@ import { ProfileDetails } from '../profile-details';
   styleUrls: ['./professional-details.component.css']
 })
 export class ProfessionalDetailsComponent implements OnInit {
-  @Input() model : ProfileDetails;
+  @Input() model : any;
 
   constructor() { }
 

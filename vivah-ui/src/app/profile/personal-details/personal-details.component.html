@@ -4,7 +4,7 @@
 
     <div fxLayout="row wrap" fxLayoutAlign="space-around center">
       <mat-form-field>
-         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Enter Your Name">
+         <input matInput [(ngModel)]="model.Name" id="name" name="name" placeholder="Enter Your Name">
       </mat-form-field>
     </div>
 
@@ -12,7 +12,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 
-<mat-radio-group class="example-radio-group" [(ngModel)]="model.idGender" name="gender" id="gender">
+<mat-radio-group class="example-radio-group" [(ngModel)]="model.IdGender" name="gender" id="gender">
   <mat-radio-button class="example-radio-button" *ngFor="let item of genders" [value]="item.IdGender">
     {{item.GenderName}}&nbsp;&nbsp;
   </mat-radio-button>
@@ -24,7 +24,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Date of Birth"  id="dob" name="dob">
+  <input matInput [matDatepicker]="picker" [(ngModel)]="model.DOB" placeholder="Date of Birth"  id="dob" name="dob">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker touchUi="true" #picker></mat-datepicker>
 </mat-form-field>
@@ -34,7 +34,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-  <mat-select [(ngModel)]="model.idMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Choose Marital Status:">
+  <mat-select [(ngModel)]="model.IdMaritalStatus" id="maritalstatus" name="maritalstatus" placeholder="Choose Marital Status:">
     <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
   </mat-select>
   </mat-form-field>
@@ -44,7 +44,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <table align="center"><td><mat-form-field>
-<input type="number" matInput placeholder="Your Height" min="3.0" max="7.11" step="0.1" [(ngModel)]="model.height" id="height" name="height">
+<input type="number" matInput placeholder="Your Height" min="3.0" max="7.11" step="0.1" [(ngModel)]="model.Height" id="height" name="height">
 </mat-form-field></td></table>
 </div>
 
@@ -52,7 +52,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <label>Are You:</label>
-<mat-radio-group class="example-radio-group" [(ngModel)]="model.idEatingHabbits" id="eatingHabbits" name="eatingHabbits">
+<mat-radio-group class="example-radio-group" [(ngModel)]="model.IdEatingHabbits" id="eatingHabbits" name="eatingHabbits">
   <mat-radio-button class="example-radio-button" *ngFor="let item of eatingHabbitType" [value]="item.IdEatingHabit">
     {{item.EatingHabitName}}
   </mat-radio-button>
@@ -63,7 +63,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <label>Drinks:</label>
-<mat-radio-group class="example-radio-group" [(ngModel)]="model.idDrinking" id="drinking" name="drinking">
+<mat-radio-group class="example-radio-group" [(ngModel)]="model.IdDrinkingHabit" id="drinking" name="drinking">
   <mat-radio-button class="example-radio-button" *ngFor="let item of drinkinghabitType" [value]="item.IdDrinkingHabit">
     {{item.DrinkingHabitName}}&nbsp;
   </mat-radio-button>
@@ -74,7 +74,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <label>Do You Smoke:</label>
-<mat-radio-group class="example-radio-group" [(ngModel)]="model.idSmoking" id="smoking" name="smoking">
+<mat-radio-group class="example-radio-group" [(ngModel)]="model.IdSmokingHabit" id="smoking" name="smoking">
   <mat-radio-button class="example-radio-button" *ngFor="let item of smokingHabit" [value]="item.IdSmokingHabit">
     {{item.SmokingHabit}}
   </mat-radio-button>
@@ -85,7 +85,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <mat-form-field>
-<textarea class="form-control" matInput  [(ngModel)]="model.disability" id="disability" name="disability" placeholder="If you have any disability? "></textarea>
+<textarea class="form-control" matInput  [(ngModel)]="model.PhysicalDisabilities" id="disability" name="disability" placeholder="If you have any disability? "></textarea>
 </mat-form-field>
 </div>
 
