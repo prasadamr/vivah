@@ -33,11 +33,13 @@
 
 <br>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-      <mat-form-field>
-         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Type Your Gotra">
-      </mat-form-field>
-    </div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+        <mat-form-field>
+            <mat-select [(ngModel)]="model.idMaritalStatus" id="gotratypes" name="gotratypes" placeholder="Select Your Gotra">
+              <mat-option *ngFor="let item of gotraType" [value]="item.IdGothra">{{item.GothraName}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+          </div>
 
 <br>
 
@@ -63,11 +65,13 @@
 
 <br>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-      <mat-form-field>
-         <input matInput [(ngModel)]="model.name" id="name" name="name" placeholder="Mother Tongue">
-      </mat-form-field>
-    </div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+        <mat-form-field>
+            <mat-select [(ngModel)]="model.idMaritalStatus" id="mothertongue" name="mothertongue" placeholder="Mother Tongue">
+              <mat-option *ngFor="let item of motherTongue" [value]="item.IdLanguage">{{item.LanguageName}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+          </div>
 <br>
 </div>
 </form>

@@ -22,6 +22,10 @@ export class ReligionDetailsComponent implements OnInit {
 
   rashi:any[];
 
+  gotraType:any[];
+
+  motherTongue:any[];
+
   constructor(private service:ReligionDetailsService) {
 
  this.religion = [];
@@ -38,6 +42,12 @@ this.getNakshatraTypes();
 
 this.rashi = [];
 this.getRashiName();
+
+this.gotraType = [];
+this.getGotraType();
+
+this.motherTongue = [];
+this.getMotherTongue();
 
   }
 
@@ -101,6 +111,29 @@ this.getRashiName();
             }
           );
         }
+
+
+        getGotraType(){
+          this.service.getGotraType().subscribe(
+            (response)=> {
+              this.gotraType = response;
+            },
+            (error) => {
+              alert("Get Gotra Types failed");
+            }
+          );
+        }
+
+       getMotherTongue(){
+         this.service.getMotherTongue().subscribe(
+           (response)=> {
+             this.motherTongue = response;
+           },
+           (error) => {
+             alert("Get Mother Tongue Types failed");
+           }
+         );
+       }
 
 
 }

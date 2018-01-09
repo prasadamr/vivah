@@ -59,4 +59,24 @@ export class ReligionDetailsService {
   }
 
 
+  getGotraType():any{
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    return this._http.get(environment.API_ROOT_PATH + "getGotra", {headers: headers})
+                .map((reponse: Response) => reponse.json());
+
+  }
+
+  getMotherTongue():any{
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    return this._http.get(environment.API_ROOT_PATH + "getMotherTongueType", {headers: headers})
+                .map((reponse: Response) => reponse.json());
+
+  }
+
+
+
 }

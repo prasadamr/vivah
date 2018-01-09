@@ -363,7 +363,60 @@
 		}
 		
 
+        
+		
+		private function getGotra(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblgothra Order By IdGothra";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+		
+		private function getMotherTongueType(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblmothertonguelanguages Order By IdLanguage";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
 
+		
 
          private function getNakshatra(){	
 		
@@ -418,6 +471,59 @@
 		
 		
 		
+         private function getQualification(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tbleducationalqualifications Order By IdQualification";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+		
+		
+         private function getEmployment(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblemployementtypes Order By IdEmployement";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+	
 		
 		/*
 		 *	Encode array into JSON

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2017 at 05:27 PM
+-- Generation Time: Jan 09, 2018 at 04:12 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -67,10 +67,12 @@ CREATE TABLE IF NOT EXISTS `tblcandidatefamilydetails` (
 
 CREATE TABLE IF NOT EXISTS `tblcandidatepersoneldetails` (
   `IdPersonalDetails` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) NOT NULL,
+  `Name` varchar(30) NOT NULL,
   `IdGender` int(11) NOT NULL,
   `MobileNumber` varchar(20) NOT NULL,
   `DOB` date NOT NULL,
+  `Email` varchar(30) NOT NULL,
+  `ProfilePicPath` varchar(50) NOT NULL,
   `IdMaritalStatus` int(11) NOT NULL,
   `Height` double NOT NULL,
   `IdEatingHabit` int(11) NOT NULL,
@@ -78,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `tblcandidatepersoneldetails` (
   `IdDrinkingHabit` int(11) NOT NULL,
   `IdSmokingHabit` int(11) NOT NULL,
   `PhysicalDisabilities` varchar(100) NOT NULL,
+  `AboutMe` varchar(150) NOT NULL,
   `IdReligion` int(11) NOT NULL,
   `IdCaste` int(11) NOT NULL,
   `IdSubCaste` int(11) NOT NULL,
@@ -181,7 +184,15 @@ CREATE TABLE IF NOT EXISTS `tbleducationalqualifications` (
   `IdQualification` int(11) NOT NULL AUTO_INCREMENT,
   `QualificationName` varchar(15) NOT NULL,
   PRIMARY KEY (`IdQualification`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tbleducationalqualifications`
+--
+
+INSERT INTO `tbleducationalqualifications` (`IdQualification`, `QualificationName`) VALUES
+(1, 'MCA'),
+(2, 'MBA');
 
 -- --------------------------------------------------------
 
@@ -193,7 +204,18 @@ CREATE TABLE IF NOT EXISTS `tblemployementtypes` (
   `IdEmployement` int(11) NOT NULL AUTO_INCREMENT,
   `EmployementType` varchar(50) NOT NULL,
   PRIMARY KEY (`IdEmployement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=106 ;
+
+--
+-- Dumping data for table `tblemployementtypes`
+--
+
+INSERT INTO `tblemployementtypes` (`IdEmployement`, `EmployementType`) VALUES
+(101, 'Buisness'),
+(102, 'IT Corporate Employee'),
+(103, 'Army'),
+(104, 'Navy'),
+(105, 'Scientist');
 
 -- --------------------------------------------------------
 
@@ -246,7 +268,15 @@ CREATE TABLE IF NOT EXISTS `tblgothra` (
   `IdGothra` int(11) NOT NULL AUTO_INCREMENT,
   `GothraName` varchar(50) NOT NULL,
   PRIMARY KEY (`IdGothra`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tblgothra`
+--
+
+INSERT INTO `tblgothra` (`IdGothra`, `GothraName`) VALUES
+(1, 'Kaushika'),
+(2, 'Vasishta');
 
 -- --------------------------------------------------------
 
@@ -297,7 +327,15 @@ CREATE TABLE IF NOT EXISTS `tblmothertonguelanguages` (
   `IdLanguage` int(11) NOT NULL AUTO_INCREMENT,
   `LanguageName` varchar(50) NOT NULL,
   PRIMARY KEY (`IdLanguage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=103 ;
+
+--
+-- Dumping data for table `tblmothertonguelanguages`
+--
+
+INSERT INTO `tblmothertonguelanguages` (`IdLanguage`, `LanguageName`) VALUES
+(101, 'Kannada'),
+(102, 'Konkani');
 
 -- --------------------------------------------------------
 
@@ -370,6 +408,7 @@ CREATE TABLE IF NOT EXISTS `tblpartnerpreferencerequests` (
   `IdRashi` int(11) NOT NULL,
   `IdQualification` int(11) NOT NULL,
   `IdEmployement` int(11) NOT NULL,
+  `MyExpectation` varchar(150) NOT NULL,
   `IdPersonalDetails` int(11) NOT NULL,
   PRIMARY KEY (`IdPartnerPreferences`),
   UNIQUE KEY `DrinkingHabit` (`IdDrinkingHabit`),
@@ -488,7 +527,7 @@ CREATE TABLE IF NOT EXISTS `tbluseraccount` (
   `userDob` date NOT NULL,
   `userGender` varchar(10) NOT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `tbluseraccount`
@@ -507,7 +546,8 @@ INSERT INTO `tbluseraccount` (`userId`, `userName`, `userEmail`, `userPhone`, `u
 (11, 'vachana', 'vcvjkx', '798654', 'nbmbc,', '2017-12-13', 'female'),
 (12, 'nandini', 'ndsscnnm', '534545', 'bsmncbSJC', '2017-12-12', 'female'),
 (13, 'sindu', 'nmnkj', '535435', 'bmnbm', '2017-12-13', 'female'),
-(14, 'renuka', 'nandinimr@gmail.com', '9874546545', 'mnnohaea', '0000-00-00', 'Female');
+(14, 'renuka', 'nandinimr@gmail.com', '9874546545', 'mnnohaea', '0000-00-00', 'Female'),
+(15, 'Praveen', 'praveen@gmail.com', '9535341740', 'jjjhsdfj', '0000-00-00', 'Male');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

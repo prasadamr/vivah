@@ -6,17 +6,18 @@
     <div fxLayout="row wrap" fxLayoutAlign="space-around center">
       <mat-form-field>
           <mat-select [(ngModel)]="model.idMaritalStatus" id="qualification" name="qualification" placeholder="Highest Qualification">
-            <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+            <mat-option *ngFor="let item of qualificationType" [value]="item.IdQualification">{{item.QualificationName}}</mat-option>
           </mat-select>
           </mat-form-field>
         </div>
 <br>
-
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-        <mat-form-field>
-           <input matInput [(ngModel)]="model.name" id="job" name="job" placeholder="Employment Type">
-        </mat-form-field>
-  </div>
+  <mat-form-field>
+      <mat-select [(ngModel)]="model.idMaritalStatus" id="employment" name="employment" placeholder="Employment Type">
+        <mat-option *ngFor="let item of employmentType" [value]="item.IdEmployement">{{item.EmployementType}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    </div>
 
 <br>
 

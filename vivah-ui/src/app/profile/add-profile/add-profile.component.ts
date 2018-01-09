@@ -33,6 +33,7 @@ export class AddProfileComponent implements OnInit {
       name: null,
       idGender: null,
       dob: null,
+      mobileNum:null,
       idMaritalStatus: null,
       height: null,
       idEatingHabbits: null,
@@ -46,6 +47,7 @@ export class AddProfileComponent implements OnInit {
       idNakshatra:null,
       idRashi:null,
       idMothertongue:null,
+      aboutMe:null,
       idSignUpUser:null
     };
   }

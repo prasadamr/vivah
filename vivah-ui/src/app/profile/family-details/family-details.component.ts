@@ -11,11 +11,11 @@ export class FamilyDetailsComponent implements OnInit {
 
 familyType:any[];
 
-
   constructor(private service:FamilyDetailsService) {
 
 this.familyType = [];
 this.getFamilyType();
+
 
    }
 
@@ -32,6 +32,7 @@ this.getFamilyType();
       }
     );
   }
+
 
 
 }

@@ -2,6 +2,7 @@ export interface ProfileDetails {
     name: string;
     idGender: number;
     dob: Date;
+    mobileNum:string;
     idMaritalStatus: number;
     height: string;
     idEatingHabbits: number;
@@ -16,4 +17,5 @@ export interface ProfileDetails {
     idRashi:number;
     idMothertongue:number;
     idSignUpUser:number;
+    aboutMe:string;
 }

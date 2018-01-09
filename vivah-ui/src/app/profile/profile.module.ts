@@ -13,6 +13,8 @@ import { PartnerPreferencesComponent } from './partner-preferences/partner-prefe
 import { PersonalDetailsService } from './personal-details/personal-details.service';
 import { FamilyDetailsService } from './family-details/family-details.service';
 import { ReligionDetailsService } from './religion-details/religion-details.service';
+import { ProfessionalDetailsService } from './professional-details/professional-details.service';
+import { PartnerPreferencesService } from './partner-preferences/partner-preferences.service';
 
 
 import {
@@ -100,6 +102,8 @@ import {
   ],
   providers: [PersonalDetailsService,
               FamilyDetailsService,
-              ReligionDetailsService],
+              ReligionDetailsService,
+              ProfessionalDetailsService,
+              PartnerPreferencesService],
 })
 export class ProfileModule { }
