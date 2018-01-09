@@ -5,25 +5,37 @@
 <br>
     <div fxLayout="row wrap" fxLayoutAlign="space-around center">
       <mat-form-field>
+<<<<<<< HEAD
           <mat-select [(ngModel)]="model.idMaritalStatus" id="qualification" name="qualification" placeholder="Highest Qualification">
             <mat-option *ngFor="let item of qualificationType" [value]="item.IdQualification">{{item.QualificationName}}</mat-option>
+=======
+          <mat-select [(ngModel)]="model.IdQualification" id="IdQualification" name="IdQualification" placeholder="Highest Qualification">
+            <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
+>>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
           </mat-select>
           </mat-form-field>
         </div>
 <br>
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+<<<<<<< HEAD
   <mat-form-field>
       <mat-select [(ngModel)]="model.idMaritalStatus" id="employment" name="employment" placeholder="Employment Type">
         <mat-option *ngFor="let item of employmentType" [value]="item.IdEmployement">{{item.EmployementType}}</mat-option>
       </mat-select>
       </mat-form-field>
     </div>
+=======
+        <mat-form-field>
+           <input matInput [(ngModel)]="model.IdEmployement" id="IdEmployement" name="IdEmployement" placeholder="Employment Type">
+        </mat-form-field>
+  </div>
+>>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
         <mat-form-field>
-           <input matInput [(ngModel)]="model.name" id="occupation" name="occupation" placeholder="Occupation">
+           <input matInput [(ngModel)]="model.Occupation" id="occupation" name="occupation" placeholder="Occupation">
         </mat-form-field>
   </div>
 
@@ -33,14 +45,14 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
         <mat-form-field>
-           <input type="number" step="1000" min="3000" matInput id="income" name="income" [(ngModel)]="model.name" placeholder="Monthly Income">
+           <input type="number" step="1000" min="3000" matInput id="income" name="income" [(ngModel)]="model.MothtlyIncome" placeholder="Monthly Income">
         </mat-form-field>
   </div>
 
 <br>
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <mat-form-field>
-<textarea class="form-control" matInput [(ngModel)]="model.disability" id="worklocation" name="worklocation" placeholder="Work Location"></textarea>
+<textarea class="form-control" matInput [(ngModel)]="model.WorkLocation" id="worklocation" name="worklocation" placeholder="Work Location"></textarea>
 </mat-form-field>
 </div>
 
@@ -48,7 +60,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <mat-form-field>
-<textarea class="form-control" matInput [(ngModel)]="model.disability" id="officeaddress" name="officeaddress" placeholder="Office Address"></textarea>
+<textarea class="form-control" matInput [(ngModel)]="model.OfficeAddress" id="officeaddress" name="officeaddress" placeholder="Office Address"></textarea>
 </mat-form-field>
 </div>
 

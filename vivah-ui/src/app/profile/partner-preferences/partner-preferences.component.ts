@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+<<<<<<< HEAD
 import { ProfileDetails } from '../profile-details';
 import{ PartnerPreferencesService } from './partner-preferences.service';
+=======
+>>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 
 @Component({
   selector: 'app-partner-preferences',
@@ -8,7 +11,7 @@ import{ PartnerPreferencesService } from './partner-preferences.service';
   styleUrls: ['./partner-preferences.component.css']
 })
 export class PartnerPreferencesComponent implements OnInit {
-  @Input() model : ProfileDetails;
+  @Input() model : any;
 
   genders:any[];
 

@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileDetails } from '../profile-details';
 import { ReligionDetailsService } from './religion-details.service';
-
-
 
 @Component({
   selector: 'app-religion-details',
@@ -10,7 +7,7 @@ import { ReligionDetailsService } from './religion-details.service';
   styleUrls: ['./religion-details.component.css']
 })
 export class ReligionDetailsComponent implements OnInit {
-  @Input() model : ProfileDetails;
+  @Input() model : any;
 
   religion:any[];
 
