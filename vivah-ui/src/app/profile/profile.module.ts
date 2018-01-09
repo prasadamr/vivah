@@ -13,12 +13,9 @@ import { PartnerPreferencesComponent } from './partner-preferences/partner-prefe
 import { PersonalDetailsService } from './personal-details/personal-details.service';
 import { FamilyDetailsService } from './family-details/family-details.service';
 import { ReligionDetailsService } from './religion-details/religion-details.service';
-<<<<<<< HEAD
 import { ProfessionalDetailsService } from './professional-details/professional-details.service';
 import { PartnerPreferencesService } from './partner-preferences/partner-preferences.service';
-=======
 import { AddProfileService } from './add-profile/add-profile.service';
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 
 
 import {
@@ -104,19 +101,12 @@ import {
   ProfessionalDetailsComponent,
   FamilyDetailsComponent
   ],
-<<<<<<< HEAD
   providers: [PersonalDetailsService,
               FamilyDetailsService,
               ReligionDetailsService,
               ProfessionalDetailsService,
-              PartnerPreferencesService],
-=======
-  providers: [
-    PersonalDetailsService,
-    FamilyDetailsService,
-    ReligionDetailsService,
-    AddProfileService
-  ]
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
+              PartnerPreferencesService,
+              AddProfileService
+              ],
 })
 export class ProfileModule { }

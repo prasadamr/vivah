@@ -36,28 +36,6 @@ export class AddProfileComponent implements OnInit {
   }
 
   defaultValues() {
-<<<<<<< HEAD
-    this.profileDetails = {
-      name: null,
-      idGender: null,
-      dob: null,
-      mobileNum:null,
-      idMaritalStatus: null,
-      height: null,
-      idEatingHabbits: null,
-      idDrinking: null,
-      idSmoking: null,
-      disability: null,
-      idReligion: null,
-      idCaste:null,
-      idSubCaste:null,
-      idGothra:null,
-      idNakshatra:null,
-      idRashi:null,
-      idMothertongue:null,
-      aboutMe:null,
-      idSignUpUser:null
-=======
     this.personalDetails = {
       Name: null,
       IdGender: null,
@@ -121,7 +99,6 @@ export class AddProfileComponent implements OnInit {
       Occupation: null,
       OfficeAddress: null,
       WorkLocation: null 
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
     };
   }
 

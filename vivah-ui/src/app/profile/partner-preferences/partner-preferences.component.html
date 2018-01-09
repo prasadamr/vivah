@@ -2,23 +2,14 @@
 <form #partnerPreference>
   <div class="card-block" align="center">
 <br>
-<<<<<<< HEAD
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-<mat-radio-group class="example-radio-group" [(ngModel)]="model.idGender" name="gender" id="gender">
+<mat-radio-group class="example-radio-group" [(ngModel)]="model.IdGender" name="gender" id="gender">
   <mat-radio-button class="example-radio-button" *ngFor="let item of genders" [value]="item.IdGender">
     {{item.GenderName}}&nbsp;&nbsp;
   </mat-radio-button>
 </mat-radio-group>
 </div>
-=======
-    <div fxLayout="row wrap" fxLayoutAlign="space-around center" align="center">
-      <mat-radio-group [(ngModel)]="model.IdGender" id="IdGender" name="IdGender">
-              <mat-radio-button class="example-margin" value="start">Male</mat-radio-button>
-              <mat-radio-button class="example-margin" value="end">Female</mat-radio-button>
-      </mat-radio-group>
-    </div>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 
     <br>
 
@@ -35,19 +26,10 @@
     <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-<<<<<<< HEAD
-    <section class="example-section" [(ngModel)]="model.maritalStatus" name="maritalStatus" id="maritalStatus">
+    <section class="example-section" [(ngModel)]="model.IdMaritalStatus" name="maritalStatus" id="maritalStatus">
       <mat-checkbox class="example-margin"  *ngFor="let item of maritalStatus" [value]="item.IdMaritalStatus">{{item.StatusName}}&nbsp;&nbsp;
       </mat-checkbox>
   </section>
-=======
-    <section class="example-section" [(ngModel)]="model.IdMaritalStatus" id="IdMaritalStatus" name="IdMaritalStatus">
-      <mat-checkbox class="example-margin">Never Married</mat-checkbox>
-      <mat-checkbox class="example-margin">Widowed</mat-checkbox>
-      <mat-checkbox class="example-margin">Divorced</mat-checkbox>
-      <mat-checkbox class="example-margin">Awaiting Divorce</mat-checkbox>
-    </section>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 </div>
 
 <br>
@@ -65,80 +47,48 @@
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-<<<<<<< HEAD
-<mat-radio-group class="example-radio-group" [(ngModel)]="model.eatingHabbitType" name="eatingHabbitType" id="eatingHabbitType">
+<mat-radio-group class="example-radio-group" [(ngModel)]="model.IdEatingHabbitType" name="eatingHabbitType" id="eatingHabbitType">
   <mat-radio-button class="example-radio-button" *ngFor="let item of eatingHabbits" [value]="item.IdEatingHabit">
     Am {{item.EatingHabitName}}&nbsp;&nbsp;
   </mat-radio-button>
-=======
-<mat-radio-group [(ngModel)]="model.IdEatingHabit" id="IdEatingHabit" name="IdEatingHabit">
-        <mat-radio-button class="example-margin" value="start">Vegetarian</mat-radio-button>
-        <mat-radio-button class="example-margin" value="end">Non Vegetarian</mat-radio-button>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 </mat-radio-group>
 </div>
 
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-<<<<<<< HEAD
-<mat-radio-group class="example-radio-group" [(ngModel)]="model.drinking" id="drinking" name="drinking">
+<mat-radio-group class="example-radio-group" [(ngModel)]="model.IdDrinkingHabit" id="drinking" name="drinking">
   <mat-radio-button class="example-radio-button" *ngFor="let item of drinkinghabitType" [value]="item.IdDrinkingHabit">
     {{item.DrinkingHabitName}}&nbsp;
   </mat-radio-button>
-=======
-<mat-radio-group [(ngModel)]="model.IdDrinkingHabit" id="IdDrinkingHabit" name="IdDrinkingHabit">
-        <mat-radio-button class="example-margin" value="start">Soft Drinks</mat-radio-button>
-        <mat-radio-button class="example-margin" value="end">Hot Drinks</mat-radio-button>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 </mat-radio-group>
 </div>
 
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-<<<<<<< HEAD
-  <mat-radio-group class="example-radio-group" [(ngModel)]="model.smoking" id="smoking" name="smoking">
+  <mat-radio-group class="example-radio-group" [(ngModel)]="model.IdSmokingHabit" id="smoking" name="smoking">
   <mat-radio-button class="example-radio-button" *ngFor="let item of smokingHabit" [value]="item.IdSmokingHabit">
     Smoke {{item.SmokingHabit}}&nbsp;
   </mat-radio-button>
 </mat-radio-group>
-=======
-  <mat-radio-group [(ngModel)]="model.IdSmokingHabit" id="IdSmokingHabit" name="IdSmokingHabit">
-          <mat-radio-button class="example-margin" value="start">Yes</mat-radio-button>
-          <mat-radio-button class="example-margin" value="end">No</mat-radio-button>
-  </mat-radio-group>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 </div>
 
 
-<<<<<<< HEAD
 <br>
       <div fxLayout="row wrap" fxLayoutAlign="space-around center">
         <mat-form-field>
-            <mat-select [(ngModel)]="model.mothertongue" id="mothertongue" name="mothertongue" placeholder="Mother Tongue">
+            <mat-select [(ngModel)]="model.IdMotherTongue" id="mothertongue" name="mothertongue" placeholder="Mother Tongue">
               <mat-option *ngFor="let item of motherTongue" [value]="item.IdLanguage">{{item.LanguageName}}</mat-option>
             </mat-select>
             </mat-form-field>
           </div>
-=======
-    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-      <mat-form-field>
-         <input matInput [(ngModel)]="model.IdMotherTongue" id="IdMotherTongue" name="IdMotherTongue" placeholder="Mother Tongue">
-      </mat-form-field>
-    </div>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-<<<<<<< HEAD
-      <mat-select [(ngModel)]="model.religiontypes" id="religiontypes" name="religiontypes" placeholder="Select Your Religion">
+      <mat-select [(ngModel)]="model.IdReligion" id="religiontypes" name="religiontypes" placeholder="Select Your Religion">
         <mat-option *ngFor="let item of religion" [value]="item.IdReligion">{{item.ReligionName}}</mat-option>
-=======
-      <mat-select [(ngModel)]="model.IdReligion" id="IdReligion" name="IdReligion" placeholder="Prefered Religion">
-        <mat-option></mat-option>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
       </mat-select>
       </mat-form-field>
     </div>
@@ -147,13 +97,8 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-<<<<<<< HEAD
-      <mat-select [(ngModel)]="model.castetypes" id="castetypes" name="castetypes" placeholder="Select Your Caste">
+      <mat-select [(ngModel)]="model.IdCaste" id="castetypes" name="castetypes" placeholder="Select Your Caste">
         <mat-option *ngFor="let item of caste" [value]="item.IdCaste">{{item.CasteName}}</mat-option>
-=======
-      <mat-select [(ngModel)]="model.IdCaste" id="IdCaste" name="IdCaste" placeholder="Prefered Caste">
-        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
       </mat-select>
       </mat-form-field>
     </div>
@@ -162,47 +107,29 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-<<<<<<< HEAD
-      <mat-select [(ngModel)]="model.subcastetypes" id="subcastetypes" name="subcastetypes" placeholder="Select Your Sub-Caste">
+      <mat-select [(ngModel)]="model.IdSubCaste" id="subcastetypes" name="subcastetypes" placeholder="Select Your Sub-Caste">
         <mat-option *ngFor="let item of subcaste" [value]="item.IdSubCaste">{{item.SubCasteName}}</mat-option>
-=======
-      <mat-select [(ngModel)]="model.IdSubCaste" id="IdSubCaste" name="IdSubCaste" placeholder="Prefered Sub-Caste">
-        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
       </mat-select>
       </mat-form-field>
     </div>
 
 <br>
 
-<<<<<<< HEAD
       <div fxLayout="row wrap" fxLayoutAlign="space-around center">
         <mat-form-field>
-            <mat-select [(ngModel)]="model.gotratypes" id="gotratypes" name="gotratypes" placeholder="Select Your Gotra">
+            <mat-select [(ngModel)]="model.IdGothra" id="gotratypes" name="gotratypes" placeholder="Select Your Gotra">
               <mat-option *ngFor="let item of gotraType" [value]="item.IdGothra">{{item.GothraName}}</mat-option>
             </mat-select>
             </mat-form-field>
           </div>
-=======
-    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-      <mat-form-field>
-         <input matInput [(ngModel)]="model.IdGothra" id="IdGothra" name="IdGothra" placeholder="Prefered Gotra">
-      </mat-form-field>
-    </div>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 
 <br>
 
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-<<<<<<< HEAD
-      <mat-select [(ngModel)]="model.nakshatra" id="nakshatra" name="nakshatra" placeholder="Select Your Nakshatra">
+      <mat-select [(ngModel)]="model.IdNakshatra" id="nakshatra" name="nakshatra" placeholder="Select Your Nakshatra">
         <mat-option *ngFor="let item of nakshatra" [value]="item.IdNakshatra">{{item.NakshatraName}}</mat-option>
-=======
-      <mat-select [(ngModel)]="model.IdNakshatra" id="IdNakshatra" name="IdNakshatra" placeholder="Prefered Nakshatra">
-        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
       </mat-select>
       </mat-form-field>
     </div>
@@ -212,13 +139,8 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-<<<<<<< HEAD
-      <mat-select [(ngModel)]="model.rashi" id="rashi" name="rashi" placeholder="Select Your Rashi">
+      <mat-select [(ngModel)]="model.IdRashi" id="rashi" name="rashi" placeholder="Select Your Rashi">
         <mat-option *ngFor="let item of rashi" [value]="item.IdRashi">{{item.RashiName}}</mat-option>
-=======
-      <mat-select [(ngModel)]="model.IdRashi" id="IdRashi" name="IdRashi" placeholder="Prefered Rashi">
-        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
       </mat-select>
       </mat-form-field>
     </div>
@@ -227,13 +149,8 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-<<<<<<< HEAD
-      <mat-select [(ngModel)]="model.qualification" id="qualification" name="qualification" placeholder="Highest Qualification">
+      <mat-select [(ngModel)]="model.IdQualification" id="qualification" name="qualification" placeholder="Highest Qualification">
         <mat-option *ngFor="let item of qualificationType" [value]="item.IdQualification">{{item.QualificationName}}</mat-option>
-=======
-      <mat-select [(ngModel)]="model.IdQualification" id="IdQualification" name="IdQualification" placeholder="Qualification">
-        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
       </mat-select>
       </mat-form-field>
     </div>
@@ -242,13 +159,8 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-<<<<<<< HEAD
-      <mat-select [(ngModel)]="model.employment" id="employment" name="employment" placeholder="Prefered Job">
+      <mat-select [(ngModel)]="model.IdEmployement" id="employment" name="employment" placeholder="Prefered Job">
         <mat-option *ngFor="let item of employmentType" [value]="item.IdEmployement">{{item.EmployementType}}</mat-option>
-=======
-      <mat-select [(ngModel)]="model.IdEmployement" id="IdEmployement" name="IdEmployement" placeholder="Prefered Job">
-        <mat-option *ngFor="let item of maritalstatus" [value]="item.IdMaritalStatus">{{item.StatusName}}</mat-option>
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
       </mat-select>
       </mat-form-field>
     </div>

@@ -1,9 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-<<<<<<< HEAD
 import { ProfileDetails } from '../profile-details';
 import { ProfessionalDetailsService } from './professional-details.service';
-=======
->>>>>>> e00e73ef15a1232508b9dcae62a347e2107e4013
 
 @Component({
   selector: 'app-professional-details',
