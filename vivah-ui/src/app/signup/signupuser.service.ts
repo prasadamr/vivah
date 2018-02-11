@@ -16,7 +16,12 @@ constructor(private _http: Http){
 
 addSignUpUser(newSignUpUser:SignUpUser): any{
 
-   var params = "UserName="+newSignUpUser.UserName+"&UserEmail="+newSignUpUser.UserEmail+"&UserPhone="+newSignUpUser.UserPhone+"&UserPwd="+newSignUpUser.UserPwd+"&UserDob="+newSignUpUser.UserDob+"&UserGender="+newSignUpUser.UserGender;
+   var params = "UserName="+newSignUpUser.UserName
+              +"&UserEmail="+newSignUpUser.UserEmail
+              +"&UserPhone="+newSignUpUser.UserPhone
+              +"&UserPwd="+newSignUpUser.UserPwd
+              +"&UserDob="+newSignUpUser.UserDob
+              +"&UserGender="+newSignUpUser.UserGender;
 
    var headers = new Headers();
    headers.append('Content-Type', 'application/x-www-form-urlencoded');

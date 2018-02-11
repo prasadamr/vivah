@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileDetails } from '../profile-details';
 import { ProfessionalDetailsService } from './professional-details.service';
 
 @Component({

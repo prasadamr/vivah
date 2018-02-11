@@ -1,5 +1,7 @@
 <?php
-	error_reporting(E_ALL ^ E_DEPRECATED);
+
+    error_reporting(E_ALL ^ E_DEPRECATED);
+
     header("Access-Control-Allow-Origin: *");
 	
 	require_once("Rest.inc.php");
@@ -87,6 +89,88 @@
 			$error = array('status' => "Failed", "msg" => "Invalid Parameters / Input");
 			$this->response($this->json($error), 400);
 		}
+		
+		
+		//Add Personal Details
+		
+		
+		
+		
+		private function addPersonalDetails(){
+		
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+			
+			
+			$userName = '';
+			$idGender = '';
+			$mobileNumber = '';
+			$profilePicPath = '';
+			$userDob = '';
+			$email = '';
+			$idMaritalStatus = '';
+			$height = '';
+			$idEatingHabbits = '';
+			$idMothertongue = '';
+			$idDrinkingHabit = '';
+			$idSmokingHabit = '';
+			$physicalDisabilities = '';
+			$aboutMe = '';
+			$idReligion = '';
+			$idCaste = '';
+			$idSubCaste = '';
+			$idGothra = '';
+			$idNakshatra = '';
+            $idRashi = '';
+			$userId = '';
+			
+
+
+			
+			if(isset($this->_request['UserName']))
+			{
+				$userName = $this->_request['Name'];
+				$idGender = $this->_request['IdGender'];
+				$mobileNumber = $this->_request['MobileNumber'];
+				$profilePicPath = $this->_request['ProfilePicPath'];
+				$userDob = $this->_request['DOB'];
+				$email = $this->_request['Email'];
+				$idMaritalStatus = $this->_request['IdMaritalStatus'];
+				$height = $this->_request['Height'];
+				$idEatingHabbits = $this->_request['IdEatingHabbits'];
+				$idMothertongue = $this->_request['IdMothertongue'];
+				$idDrinkingHabit = $this->_request['IdDrinkingHabit'];
+				$idSmokingHabit = $this->_request['IdSmokingHabit'];
+				$physicalDisabilities = $this->_request['PhysicalDisabilities'];
+				$aboutMe = $this->_request['AboutMe'];
+				$idReligion = $this->_request['IdReligion'];
+				$idCaste = $this->_request['IdCaste'];
+				$idSubCaste = $this->_request['IdSubCaste'];
+				$idGothra = $this->_request['IdGothra'];
+				$idNakshatra = $this->_request['IdNakshatra'];
+				$idRashi = $this->_request['IdRashi'];
+				$userId = '1';
+
+			}
+			
+			
+			$strSql = "Insert Into tblcandidatepersoneldetails(Name, IdGender, MobileNumber, ProfilePicPath, DOB, Email, IdMaritalStatus, Height, IdEatingHabit, IdMothertongue, IdDrinkingHabit, IdSmokingHabit, PhysicalDisabilities, AboutMe, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, userId)";
+			$strSql = $strSql." Output Inserted.IdPersonalDetails Values('$userName', '$idGender', '$mobileNumber', '$profilePicPath', '$userDob', '$email', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
+			
+			mysql_query($strSql);
+			
+			$success = array('status' => "Success", "msg" => "Your Personal Account Created Successfully.");
+			$this->response($this->json($success),200);
+			
+			// If invalid inputs "Bad Request" status message and reason
+			$error = array('status' => "Failed", "msg" => "Invalid Parameters / Input");
+			$this->response($this->json($error), 400);
+		}
+		
+		
+		
+		
 		
 		
 		
@@ -251,8 +335,6 @@
 		
 		
 		
-		
-		
 		//family type
 		
 		private function getFamily(){	
@@ -320,8 +402,10 @@
 				$this->response('',406);
 			}
 			
-			$strSql = "SELECT * From tblcaste Order By IdCaste";
+			$idReligion=$this->_request["idReligion"];
 			
+			$strSql = "SELECT * From tblcaste WHERE IdReligion = $idReligion Order By IdCaste;";
+
 			$sql = mysql_query($strSql, $this->db);
 		
 			if(mysql_num_rows($sql) > 0){
@@ -346,7 +430,9 @@
 				$this->response('',406);
 			}
 			
-			$strSql = "SELECT * From tblsubcaste Order By IdSubCaste";
+		    $idCaste=$this->_request["idCaste"];
+			
+			$strSql = "SELECT * From tblsubcaste WHERE IdCaste = $idCaste Order By IdSubCaste";
 			
 			$sql = mysql_query($strSql, $this->db);
 		
@@ -426,6 +512,8 @@
 				$this->response('',406);
 			}
 			
+			
+			
 			$strSql = "SELECT * From tblnakshatra Order By IdNakshatra";
 			
 			$sql = mysql_query($strSql, $this->db);
@@ -452,7 +540,10 @@
 				$this->response('',406);
 			}
 			
-			$strSql = "SELECT * From tblrashi Order By IdRashi";
+			$idNakshatra=$this->_request["idNakshatra"];
+
+			
+			$strSql = "SELECT * From tblrashi WHERE IdNakshatra = $idNakshatra Order By IdRashi";
 			
 			$sql = mysql_query($strSql, $this->db);
 		

@@ -40,6 +40,8 @@ export class AddProfileComponent implements OnInit {
       Name: null,
       IdGender: null,
       DOB: null,
+      Email:null,
+      ProfilePicPath:null,
       IdMaritalStatus: null,
       Height: null,
       IdEatingHabbits: null,
@@ -54,6 +56,7 @@ export class AddProfileComponent implements OnInit {
       IdSmokingHabit:null,
       MobileNumber: null,
       PhysicalDisabilities: null,
+      AboutMe:null,
       UserId: null
     };
     this.familyDetails = {
@@ -98,14 +101,22 @@ export class AddProfileComponent implements OnInit {
       MothtlyIncome: null,
       Occupation: null,
       OfficeAddress: null,
-      WorkLocation: null 
+      WorkLocation: null
     };
   }
 
   ngOnInit() {
   }
 
-  save() {
+  save():void {
+
+
+    if(this.personalDetails.Name != "" && this.personalDetails.IdGender != "" && this.personalDetails.DOB != "" && this.personalDetails.Email != "" &&
+       this.personalDetails.ProfilePicPath != "" && this.personalDetails.IdMaritalStatus != "" && this.personalDetails.Height != "" &&
+       this.personalDetails.IdEatingHabbits != "" && this.personalDetails.IdDrinkingHabit != "" && this.personalDetails.IdSmokingHabit != "" &&
+       this.personalDetails.MobileNumber != "" && this.personalDetails.PhysicalDisabilities != "" && this.personalDetails.AboutMe != "")
+    {
+      
     this.service.addPersonalDetails(this.personalDetails).subscribe(
       (res: any) => {
         this.professionalDetails.IdPersonalDetails = res;
@@ -114,10 +125,14 @@ export class AddProfileComponent implements OnInit {
         this.addProfessionalDetails();
       },
       (error: Error) => {
-        alert("Add Personal Details Failed");
+        alert("Adding Personal Details Failed");
       }
     );
   }
+  else
+  alert('Please Enter All the Fields');
+
+}
 
   addProfessionalDetails() {
     this.service.addProfessionalDetails(this.professionalDetails).subscribe(

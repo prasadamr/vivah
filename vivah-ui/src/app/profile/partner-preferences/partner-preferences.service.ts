@@ -89,24 +89,33 @@ export class PartnerPreferencesService {
     }
 
 
-        getCasteType():any{
+        getCasteType(idReligion: number):any{
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-            return this._http.get(environment.API_ROOT_PATH + "getCaste", {headers: headers})
+            return this._http.get(environment.API_ROOT_PATH + "getCaste&idReligion="+idReligion, {headers: headers})
                         .map((reponse: Response) => reponse.json());
         }
 
 
 
 
-          getSubcaste():any{
+          getSubcaste(idCaste:number):any{
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-            return this._http.get(environment.API_ROOT_PATH + "getSubCaste", {headers: headers})
+            return this._http.get(environment.API_ROOT_PATH + "getSubCaste&idCaste="+idCaste, {headers: headers})
                         .map((reponse: Response) => reponse.json());
         }
+
+
+              getGotraType():any{
+                var headers = new Headers();
+                headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+                return this._http.get(environment.API_ROOT_PATH + "getGotra", {headers: headers})
+                            .map((reponse: Response) => reponse.json());
+              }
 
 
         getNakshatraTypes():any{
@@ -117,23 +126,14 @@ export class PartnerPreferencesService {
                     .map((reponse: Response) => reponse.json());
        }
 
-       getRashi():any{
+       getRashi(idNakshatra:number):any{
        var headers = new Headers();
        headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-       return this._http.get(environment.API_ROOT_PATH + "getRashi", {headers: headers})
+       return this._http.get(environment.API_ROOT_PATH + "getRashi&idNakshatra="+idNakshatra, {headers: headers})
                    .map((reponse: Response) => reponse.json());
       }
 
-
-      getGotraType():any{
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-        return this._http.get(environment.API_ROOT_PATH + "getGotra", {headers: headers})
-                    .map((reponse: Response) => reponse.json());
-
-      }
 
 
       getQualificationType():any{

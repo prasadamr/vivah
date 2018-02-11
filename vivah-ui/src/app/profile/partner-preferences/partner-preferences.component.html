@@ -48,8 +48,8 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <mat-radio-group class="example-radio-group" [(ngModel)]="model.IdEatingHabbitType" name="eatingHabbitType" id="eatingHabbitType">
-  <mat-radio-button class="example-radio-button" *ngFor="let item of eatingHabbits" [value]="item.IdEatingHabit">
-    Am {{item.EatingHabitName}}&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<mat-radio-button class="example-radio-button" *ngFor="let item of eatingHabbits" [value]="item.IdEatingHabit">
+     {{item.EatingHabitName}}&nbsp;&nbsp;
   </mat-radio-button>
 </mat-radio-group>
 </div>
@@ -59,7 +59,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <mat-radio-group class="example-radio-group" [(ngModel)]="model.IdDrinkingHabit" id="drinking" name="drinking">
   <mat-radio-button class="example-radio-button" *ngFor="let item of drinkinghabitType" [value]="item.IdDrinkingHabit">
-    {{item.DrinkingHabitName}}&nbsp;
+   {{item.DrinkingHabitName}}&nbsp;
   </mat-radio-button>
 </mat-radio-group>
 </div>
@@ -87,7 +87,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-      <mat-select [(ngModel)]="model.IdReligion" id="religiontypes" name="religiontypes" placeholder="Select Your Religion">
+      <mat-select [(ngModel)]="model.IdReligion" id="religiontypes" name="religiontypes" (change)="onChangeReligion()" placeholder="Prefered Religion">
         <mat-option *ngFor="let item of religion" [value]="item.IdReligion">{{item.ReligionName}}</mat-option>
       </mat-select>
       </mat-form-field>
@@ -97,7 +97,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-      <mat-select [(ngModel)]="model.IdCaste" id="castetypes" name="castetypes" placeholder="Select Your Caste">
+      <mat-select [(ngModel)]="model.IdCaste" id="castetypes" name="castetypes" (change)="onChangeCaste()" placeholder="Prefered Caste">
         <mat-option *ngFor="let item of caste" [value]="item.IdCaste">{{item.CasteName}}</mat-option>
       </mat-select>
       </mat-form-field>
@@ -107,7 +107,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-      <mat-select [(ngModel)]="model.IdSubCaste" id="subcastetypes" name="subcastetypes" placeholder="Select Your Sub-Caste">
+      <mat-select [(ngModel)]="model.IdSubCaste" id="subcastetypes" name="subcastetypes" placeholder="Prefered Sub-Caste">
         <mat-option *ngFor="let item of subcaste" [value]="item.IdSubCaste">{{item.SubCasteName}}</mat-option>
       </mat-select>
       </mat-form-field>
@@ -117,7 +117,7 @@
 
       <div fxLayout="row wrap" fxLayoutAlign="space-around center">
         <mat-form-field>
-            <mat-select [(ngModel)]="model.IdGothra" id="gotratypes" name="gotratypes" placeholder="Select Your Gotra">
+            <mat-select [(ngModel)]="model.IdGothra" id="gotratypes" name="gotratypes" placeholder="Prefered Gotra">
               <mat-option *ngFor="let item of gotraType" [value]="item.IdGothra">{{item.GothraName}}</mat-option>
             </mat-select>
             </mat-form-field>
@@ -128,7 +128,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-      <mat-select [(ngModel)]="model.IdNakshatra" id="nakshatra" name="nakshatra" placeholder="Select Your Nakshatra">
+      <mat-select [(ngModel)]="model.IdNakshatra" id="nakshatra" name="nakshatra"  (change)="onChangeNakshatra()" placeholder="Prefered Nakshatra">
         <mat-option *ngFor="let item of nakshatra" [value]="item.IdNakshatra">{{item.NakshatraName}}</mat-option>
       </mat-select>
       </mat-form-field>
@@ -139,7 +139,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-      <mat-select [(ngModel)]="model.IdRashi" id="rashi" name="rashi" placeholder="Select Your Rashi">
+      <mat-select [(ngModel)]="model.IdRashi" id="rashi" name="rashi" placeholder="Prefered Rashi">
         <mat-option *ngFor="let item of rashi" [value]="item.IdRashi">{{item.RashiName}}</mat-option>
       </mat-select>
       </mat-form-field>
@@ -149,7 +149,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-      <mat-select [(ngModel)]="model.IdQualification" id="qualification" name="qualification" placeholder="Highest Qualification">
+      <mat-select [(ngModel)]="model.IdQualification" id="qualification" name="qualification" placeholder="Prefered Qualification">
         <mat-option *ngFor="let item of qualificationType" [value]="item.IdQualification">{{item.QualificationName}}</mat-option>
       </mat-select>
       </mat-form-field>

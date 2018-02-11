@@ -1,5 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {PersonalDetailsService} from './personal-details.service';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-personal-details',
@@ -19,7 +28,7 @@ export class PersonalDetailsComponent implements OnInit {
   smokingHabit:any[];
 
   constructor(private service: PersonalDetailsService) {
-    this.genders = [ ];
+     this.genders = [ ];
      this.getGenders();
 
      this.maritalstatus = [ ];
@@ -37,6 +46,15 @@ export class PersonalDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+    emailFormControl = new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]);
+
+    matcher = new MyErrorStateMatcher();
+
 
   getGenders() {
     this.service.getGenders().subscribe(

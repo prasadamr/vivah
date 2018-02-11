@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ReligionDetailsService } from './religion-details.service';
+import { PersonalDetails } from '../models/personal-details';
 
 @Component({
   selector: 'app-religion-details',
@@ -29,16 +30,16 @@ export class ReligionDetailsComponent implements OnInit {
  this.getReligionType();
 
 this.caste = [];
-this.getCasteType();
+this.getCasteType(0);
 
 this.subcaste = [];
-this.getSubCasteType();
+this.getSubCasteType(0);
 
 this.nakshatra = [];
 this.getNakshatraTypes();
 
 this.rashi = [];
-this.getRashiName();
+this.getRashiName(0);
 
 this.gotraType = [];
 this.getGotraType();
@@ -62,8 +63,14 @@ this.getMotherTongue();
     );
   }
 
-  getCasteType(){
-    this.service.getCasteType().subscribe(
+
+onChangeReligion(idReligion: number):void{
+  //alert(this.model.IdReligion);
+  this.getCasteType(this.model.IdReligion);
+}
+
+  getCasteType(idReligion: number){
+    this.service.getCasteType(idReligion).subscribe(
       (response)=> {
         this.caste = response;
       },
@@ -74,8 +81,14 @@ this.getMotherTongue();
   }
 
 
-    getSubCasteType(){
-      this.service.getSubCasteType().subscribe(
+  onChangeCaste(idCaste: number):void{
+    //alert(this.model.IdReligion);
+    this.getSubCasteType(this.model.IdCaste);
+  }
+
+
+    getSubCasteType(idCaste: number){
+      this.service.getSubCasteType(idCaste).subscribe(
         (response)=> {
           this.subcaste = response;
         },
@@ -92,14 +105,20 @@ this.getMotherTongue();
               this.nakshatra = response;
             },
             (error) => {
-              alert("Get Natshatra types failed");
+              alert("Get Nakshatra types failed");
             }
           );
         }
 
+        onChangeNakshatra(idNakshatra: number):void{
+          //alert(this.model.IdReligion);
+          this.getRashiName(this.model.IdNakshatra);
+        }
 
-        getRashiName(){
-          this.service.getRashiName().subscribe(
+
+
+        getRashiName(idNakshatra: number){
+          this.service.getRashiName(idNakshatra).subscribe(
             (response)=> {
               this.rashi = response;
             },

@@ -22,22 +22,22 @@ export class ReligionDetailsService {
     }
 
 
-    getCasteType():any{
+    getCasteType(idReligion: number):any{
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-        return this._http.get(environment.API_ROOT_PATH + "getCaste", {headers: headers})
+        return this._http.get(environment.API_ROOT_PATH + "getCaste&idReligion="+idReligion, {headers: headers})
                     .map((reponse: Response) => reponse.json());
     }
 
 
 
 
-    getSubCasteType():any{
+    getSubCasteType(idCaste:number):any{
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-        return this._http.get(environment.API_ROOT_PATH + "getSubCaste", {headers: headers})
+        return this._http.get(environment.API_ROOT_PATH + "getSubCaste&idCaste="+idCaste, {headers: headers})
                     .map((reponse: Response) => reponse.json());
     }
 
@@ -50,11 +50,11 @@ export class ReligionDetailsService {
                 .map((reponse: Response) => reponse.json());
    }
 
-   getRashiName():any{
+   getRashiName(idNakshatra: number):any{
    var headers = new Headers();
    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-   return this._http.get(environment.API_ROOT_PATH + "getRashi", {headers: headers})
+   return this._http.get(environment.API_ROOT_PATH + "getRashi&idNakshatra="+idNakshatra, {headers: headers})
                .map((reponse: Response) => reponse.json());
   }
 

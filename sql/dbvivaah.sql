@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 09, 2018 at 04:12 PM
+-- Generation Time: Feb 11, 2018 at 07:04 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -70,9 +70,9 @@ CREATE TABLE IF NOT EXISTS `tblcandidatepersoneldetails` (
   `Name` varchar(30) NOT NULL,
   `IdGender` int(11) NOT NULL,
   `MobileNumber` varchar(20) NOT NULL,
+  `ProfilePicPath` varchar(50) NOT NULL,
   `DOB` date NOT NULL,
   `Email` varchar(30) NOT NULL,
-  `ProfilePicPath` varchar(50) NOT NULL,
   `IdMaritalStatus` int(11) NOT NULL,
   `Height` double NOT NULL,
   `IdEatingHabit` int(11) NOT NULL,
@@ -89,7 +89,14 @@ CREATE TABLE IF NOT EXISTS `tblcandidatepersoneldetails` (
   `IdRashi` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   PRIMARY KEY (`IdPersonalDetails`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `tblcandidatepersoneldetails`
+--
+
+INSERT INTO `tblcandidatepersoneldetails` (`IdPersonalDetails`, `Name`, `IdGender`, `MobileNumber`, `ProfilePicPath`, `DOB`, `Email`, `IdMaritalStatus`, `Height`, `IdEatingHabit`, `IdMotherTongue`, `IdDrinkingHabit`, `IdSmokingHabit`, `PhysicalDisabilities`, `AboutMe`, `IdReligion`, `IdCaste`, `IdSubCaste`, `IdGothra`, `IdNakshatra`, `IdRashi`, `userId`) VALUES
+(1, '', 0, '', '', '0000-00-00', '', 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -267,6 +274,7 @@ INSERT INTO `tblgender` (`IdGender`, `GenderName`) VALUES
 CREATE TABLE IF NOT EXISTS `tblgothra` (
   `IdGothra` int(11) NOT NULL AUTO_INCREMENT,
   `GothraName` varchar(50) NOT NULL,
+  `IdSubCaste` int(11) NOT NULL,
   PRIMARY KEY (`IdGothra`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -274,9 +282,9 @@ CREATE TABLE IF NOT EXISTS `tblgothra` (
 -- Dumping data for table `tblgothra`
 --
 
-INSERT INTO `tblgothra` (`IdGothra`, `GothraName`) VALUES
-(1, 'Kaushika'),
-(2, 'Vasishta');
+INSERT INTO `tblgothra` (`IdGothra`, `GothraName`, `IdSubCaste`) VALUES
+(1, 'Kaushika', 111),
+(2, 'Vasishta', 111);
 
 -- --------------------------------------------------------
 
@@ -424,26 +432,51 @@ CREATE TABLE IF NOT EXISTS `tblpartnerpreferencerequests` (
 CREATE TABLE IF NOT EXISTS `tblrashi` (
   `IdRashi` int(11) NOT NULL AUTO_INCREMENT,
   `RashiName` varchar(50) NOT NULL,
+  `IdNakshatra` int(11) NOT NULL,
   PRIMARY KEY (`IdRashi`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=113 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=137 ;
 
 --
 -- Dumping data for table `tblrashi`
 --
 
-INSERT INTO `tblrashi` (`IdRashi`, `RashiName`) VALUES
-(101, 'Mesha-Aries'),
-(102, 'Vrishabha-Taurus'),
-(103, 'Mithuna-Gemini'),
-(104, 'Karka-Cancer'),
-(105, 'Simha-Leo'),
-(106, 'kanya-Virgo'),
-(107, 'Tula-Libra'),
-(108, 'Vrischika-Scorpio'),
-(109, 'Dhanu-Saggitarius'),
-(110, 'Makara-Capricorn'),
-(111, 'Kumbha-Aquarius'),
-(112, 'Meena-Pisces');
+INSERT INTO `tblrashi` (`IdRashi`, `RashiName`, `IdNakshatra`) VALUES
+(101, 'Mesha-Aries', 101),
+(102, 'Mesha-Aries', 102),
+(103, 'Mesha-Aries', 103),
+(104, 'Vrishabha', 103),
+(105, 'Vrishabha', 104),
+(106, 'Vrishabha', 105),
+(107, 'Mithuna', 105),
+(108, 'Mithuna', 106),
+(109, 'Mithuna', 107),
+(110, 'Karka-Cancer', 107),
+(111, 'Karka-Cancer', 108),
+(112, 'Karka-Cancer', 109),
+(113, 'Simha-Leo', 110),
+(114, 'Simha-Leo', 111),
+(115, 'Simha-Leo', 112),
+(116, 'Kanya-Virgo', 112),
+(117, 'Kanya-Virgo', 113),
+(118, 'Kanya-Virgo', 114),
+(119, 'Tula-Libra', 114),
+(120, 'Tula-Libra', 115),
+(121, 'Tula-Libra', 116),
+(122, 'Vrischika-Scorpio', 116),
+(123, 'Vrischika-Scorpio', 117),
+(124, 'Vrischika-Scorpio', 118),
+(125, 'Dhanu-Saggitarius', 119),
+(126, 'Dhanu-Saggitarius', 120),
+(127, 'Dhanu-Saggitarius', 121),
+(128, 'Makara-Capricorn', 121),
+(129, 'Makara-Capricorn', 122),
+(130, 'Makara-Capricorn', 123),
+(131, 'Kumbha-Aquarius', 123),
+(132, 'Kumbha-Aquarius', 124),
+(133, 'Kumbha-Aquarius', 125),
+(134, 'Meena-Pisces', 125),
+(135, 'Meena-Pisces', 126),
+(136, 'Meena-Pisces', 127);
 
 -- --------------------------------------------------------
 

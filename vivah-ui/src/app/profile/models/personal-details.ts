@@ -2,7 +2,9 @@ export interface PersonalDetails {
     Name: string;
     IdGender: number;
     MobileNumber: number;
+    ProfilePicPath:string;
     DOB: Date;
+    Email:string;
     IdMaritalStatus: number;
     Height: string;
     IdEatingHabbits: number;
@@ -16,5 +18,6 @@ export interface PersonalDetails {
     IdGothra:number;
     IdNakshatra:number;
     IdRashi:number;
+    AboutMe:string;
     UserId:number;
 }

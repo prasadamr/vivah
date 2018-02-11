@@ -18,29 +18,32 @@ export class AddProfileService {
     }
 
     addPersonalDetails(personalDetails: PersonalDetails) {
-        var params = "DOB="+personalDetails.DOB
-            +"&Height="+personalDetails.Height
-            +"&IdCaste="+personalDetails.IdCaste
-            +"&IdDrinkingHabit="+personalDetails.IdDrinkingHabit
-            +"&IdEatingHabbits="+personalDetails.IdEatingHabbits
+        var params = "Name="+personalDetails.Name
             +"&IdGender="+personalDetails.IdGender
-            +"&IdGothra="+personalDetails.IdGothra
+            +"&DOB="+personalDetails.DOB
+            +"&Email="+personalDetails.Email
+            +"&ProfilePicPath="+personalDetails.ProfilePicPath;
             +"&IdMaritalStatus="+personalDetails.IdMaritalStatus
-            +"&IdMothertongue="+personalDetails.IdMothertongue
+            +"&Height="+personalDetails.Height
+            +"&IdEatingHabbits="+personalDetails.IdEatingHabbits
+            +"&IdReligion="+personalDetails.IdReligion
+            +"&IdCaste="+personalDetails.IdCaste
+            +"&IdSubCaste="+personalDetails.IdSubCaste
+            +"&IdGothra="+personalDetails.IdGothra
             +"&IdNakshatra="+personalDetails.IdNakshatra
             +"&IdRashi="+personalDetails.IdRashi
-            +"&IdReligion="+personalDetails.IdReligion
+            +"&IdMothertongue="+personalDetails.IdMothertongue
+            +"&IdDrinkingHabit="+personalDetails.IdDrinkingHabit
             +"&IdSmokingHabit="+personalDetails.IdSmokingHabit
-            +"&IdSubCaste="+personalDetails.IdSubCaste
             +"&MobileNumber="+personalDetails.MobileNumber
-            +"&Name="+personalDetails.Name
             +"&PhysicalDisabilities="+personalDetails.PhysicalDisabilities
-            +"&UserId="+personalDetails.UserId;
+            +"&AboutMe="+personalDetails.AboutMe
+            +"&UserId="+personalDetails.UserId
 
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-        return this._http.post(environment.API_ROOT_PATH + "", params, {headers: headers})
+        return this._http.post(environment.API_ROOT_PATH + "addPersonalDetails", params, {headers: headers})
                     .map((reponse: Response) => reponse.json());
     }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileDetails } from '../profile-details';
 import{ PartnerPreferencesService } from './partner-preferences.service';
 
 @Component({
@@ -62,10 +61,10 @@ export class PartnerPreferencesComponent implements OnInit {
       this.getReligion();
 
       this.caste = [];
-      this.getCasteType();
+      this.getCasteType(0);
 
       this.subcaste = [];
-      this.getSubcaste();
+      this.getSubcaste(0);
 
       this.gotraType = [];
       this.getGotraType();
@@ -74,7 +73,7 @@ export class PartnerPreferencesComponent implements OnInit {
       this.getNakshatraTypes();
 
       this.rashi = [];
-      this.getRashi();
+      this.getRashi(0);
 
       this.qualificationType = [];
       this.getQualificationType();
@@ -167,8 +166,14 @@ export class PartnerPreferencesComponent implements OnInit {
      }
 
 
-     getCasteType(){
-       this.service.getCasteType().subscribe(
+     onChangeReligion(idReligion: number):void{
+       //alert(this.model.IdReligion);
+       this.getCasteType(this.model.IdReligion);
+     }
+
+
+     getCasteType(idReligion: number){
+       this.service.getCasteType(idReligion).subscribe(
          (response)=> {
            this.caste = response;
          },
@@ -179,8 +184,14 @@ export class PartnerPreferencesComponent implements OnInit {
      }
 
 
-      getSubcaste(){
-        this.service.getSubcaste().subscribe(
+ onChangeCaste(idCaste:number):void{
+   //alert(this.model.IdCaste);
+   this.getSubcaste(this.model.IdCaste);
+}
+
+
+      getSubcaste(idCaste:number){
+        this.service.getSubcaste(idCaste).subscribe(
           (response)=> {
             this.subcaste = response;
           },
@@ -214,8 +225,12 @@ export class PartnerPreferencesComponent implements OnInit {
         );
       }
 
-      getRashi(){
-        this.service.getRashi().subscribe(
+      onChangeNakshatra(idNakshatra:number){
+         this.getRashi(this.model.IdNakshatra);
+      }
+
+      getRashi(idNakshatra:number){
+        this.service.getRashi(idNakshatra).subscribe(
           (response)=> {
             this.rashi = response;
           },
