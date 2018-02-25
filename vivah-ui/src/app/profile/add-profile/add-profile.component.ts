@@ -111,10 +111,10 @@ export class AddProfileComponent implements OnInit {
   save():void {
 
 
-    if(this.personalDetails.Name != "" && this.personalDetails.IdGender != "" && this.personalDetails.DOB != "" && this.personalDetails.Email != "" &&
-       this.personalDetails.ProfilePicPath != "" && this.personalDetails.IdMaritalStatus != "" && this.personalDetails.Height != "" &&
-       this.personalDetails.IdEatingHabbits != "" && this.personalDetails.IdDrinkingHabit != "" && this.personalDetails.IdSmokingHabit != "" &&
-       this.personalDetails.MobileNumber != "" && this.personalDetails.PhysicalDisabilities != "" && this.personalDetails.AboutMe != "")
+    if(this.personalDetails.Name != "" && this.personalDetails.IdGender != null && this.personalDetails.DOB != null && this.personalDetails.Email != "" &&
+       this.personalDetails.ProfilePicPath != "" && this.personalDetails.IdMaritalStatus != null && this.personalDetails.Height != "" &&
+       this.personalDetails.IdEatingHabbits != null && this.personalDetails.IdDrinkingHabit != null && this.personalDetails.IdSmokingHabit != null &&
+       this.personalDetails.MobileNumber != null && this.personalDetails.PhysicalDisabilities != "" && this.personalDetails.AboutMe != "")
     {
       
     this.service.addPersonalDetails(this.personalDetails).subscribe(
