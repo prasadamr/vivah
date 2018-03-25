@@ -61,10 +61,8 @@ export class PartnerPreferencesComponent implements OnInit {
       this.getReligion();
 
       this.caste = [];
-      this.getCasteType(0);
 
       this.subcaste = [];
-      this.getSubcaste(0);
 
       this.gotraType = [];
       this.getGotraType();
@@ -73,7 +71,6 @@ export class PartnerPreferencesComponent implements OnInit {
       this.getNakshatraTypes();
 
       this.rashi = [];
-      this.getRashi(0);
 
       this.qualificationType = [];
       this.getQualificationType();
@@ -84,6 +81,15 @@ export class PartnerPreferencesComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.model.IdReligion) {
+      this.getCasteType(this.model.IdReligion);
+    }
+    if (this.model.IdCaste) {
+      this.getSubcaste(this.model.IdCaste);
+    }
+    if (this.model.IdNakshatra) {
+      this.getRashi(this.model.IdNakshatra);
+    }
   }
 
 

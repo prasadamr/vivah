@@ -22,7 +22,7 @@ export class AddProfileService {
             +"&IdGender="+personalDetails.IdGender
             +"&DOB="+personalDetails.DOB
             +"&Email="+personalDetails.Email
-            +"&ProfilePicPath="+personalDetails.ProfilePicPath;
+            +"&ProfilePicPath="+personalDetails.ProfilePicPath
             +"&IdMaritalStatus="+personalDetails.IdMaritalStatus
             +"&Height="+personalDetails.Height
             +"&IdEatingHabbits="+personalDetails.IdEatingHabbits
