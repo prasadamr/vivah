@@ -117,7 +117,7 @@
 			$idSmokingHabit = '';
 			$physicalDisabilities = '';
 			$aboutMe = '';
-			$idReligion = '';
+		 	$idReligion = '';
 			$idCaste = '';
 			$idSubCaste = '';
 			$idGothra = '';
@@ -128,7 +128,7 @@
 
 
 			
-			if(isset($this->_request['UserName']))
+			if(isset($this->_request['Name']))
 			{
 				$userName = $this->_request['Name'];
 				$idGender = $this->_request['IdGender'];
@@ -150,13 +150,14 @@
 				$idGothra = $this->_request['IdGothra'];
 				$idNakshatra = $this->_request['IdNakshatra'];
 				$idRashi = $this->_request['IdRashi'];
+				
 				$userId = '1';
 
 			}
 			
 			
 			$strSql = "Insert Into tblcandidatepersoneldetails(Name, IdGender, MobileNumber, ProfilePicPath, DOB, Email, IdMaritalStatus, Height, IdEatingHabit, IdMothertongue, IdDrinkingHabit, IdSmokingHabit, PhysicalDisabilities, AboutMe, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, userId)";
-			$strSql = $strSql." Output Inserted.IdPersonalDetails Values('$userName', '$idGender', '$mobileNumber', '$profilePicPath', '$userDob', '$email', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
+			$strSql = $strSql." Output Inserted.IdPersonalDetails Values('$userName', '$idGender', '$mobileNumber', '$profilePicPath', '$userDob', '$email ', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
 			
 			mysql_query($strSql);
 			
@@ -170,6 +171,177 @@
 		
 		
 		
+		
+		private function addProfessionalnalDetails(){
+		
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+			
+			
+			$idEmployement = '';
+			$idQualification = '';
+			$mothtlyIncome = '';
+			$occupation = '';
+			$officeAddress = '';
+			$workLocation = '';
+			
+			$idPersonalDetails = '';
+
+			
+			if(isset($this->_request['IdEmployement']))
+			{
+				$idEmployement = $this->_request['IdEmployement'];
+				
+				$idQualification = $this->_request['IdQualification'];
+				$mothtlyIncome = $this->_request['MothtlyIncome'];
+				$occupation = $this->_request['Occupation'];
+				$officeAddress = $this->_request['OfficeAddress'];
+				$workLocation = $this->_request['WorkLocation'];
+				$idPersonalDetails = '1';
+
+			}
+			
+			
+			$strSql = "Insert Into tblcandidateprofessionaldetails(IdQualification, IdEmployement, Occupation, MothtlyIncome, WorkLocation, OfficeAddress, IdPersonalDetails)";
+			$strSql = $strSql." Output Inserted.IdProfessionalDetails Values('$idQualification', '$idEmployement', '$occupation', '$mothtlyIncome', '$workLocation', '$officeAddress', '$idPersonalDetails')";
+			
+			mysql_query($strSql);
+			
+			$success = array('status' => "Success", "msg" => "Your Professional Account Created Successfully.");
+			$this->response($this->json($success),200);
+			
+			// If invalid inputs "Bad Request" status message and reason
+			$error = array('status' => "Failed", "msg" => "Invalid Parameters / Input");
+			$this->response($this->json($error), 400);
+		}
+		
+		
+		
+		private function addFamilyDetails(){
+		
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+			
+			$idFamilyType = '';
+			$fatherName = '';
+			$fatherOccupation = '';
+			$motherName = '';
+			$motherOccupation = '';
+			$totalSisters = '';
+			$marriedSisters = '';
+			$totalBrothers = '';
+			$marriedBrothers = '';
+			$address = '';
+			$phoneNumber = '';
+			$idPersonalDetails = '';
+			
+
+			
+			if(isset($this->_request['IdFamilyType']))
+			{
+				$idFamilyType = $this->_request['IdFamilyType'];
+				
+				$fatherName = $this->_request['FatherName'];
+				$fatherOccupation = $this->_request['FatherOccupation'];
+				$motherName = $this->_request['MotherName'];
+				$motherOccupation = $this->_request['MotherOccupation'];
+				$totalSisters = $this->_request['TotalSisters'];
+				$marriedSisters = $this->_request['MarriedSisters'];
+				$totalBrothers = $this->_request['TotalBrothers'];
+				$marriedBrothers = $this->_request['MarriedBrothers'];
+				$address = $this->_request['Address'];
+				$phoneNumber = $this->_request['PhoneNumber'];
+				$idPersonalDetails = '1';
+			
+			}
+			
+			
+			$strSql = "Insert Into tblcandidatefamilydetails(IdFamilyType, FatherName, FatherOccupation, MotherName, MotherOccupation, TotalSisters, MarriedSisters, TotalBrothers, MarriedBrothers, Address, PhoneNumber, IdPersonalDetails)";
+			$strSql = $strSql." Output Inserted.IdFamilyDetails Values('$idFamilyType', '$fatherName', '$fatherOccupation', '$motherName', '$motherOccupation', '$totalSisters', '$marriedSisters' '$totalBrothers', '$marriedBrothers', '$address', '$phoneNumber', '$idPersonalDetails')";
+			
+			mysql_query($strSql);
+			
+			$success = array('status' => "Success", "msg" => "Your Family Details Account Created Successfully.");
+			$this->response($this->json($success),200);
+			
+			// If invalid inputs "Bad Request" status message and reason
+			$error = array('status' => "Failed", "msg" => "Invalid Parameters / Input");
+			$this->response($this->json($error), 400);
+		}
+		
+		
+		
+		//partner preference
+		
+		private function partnerPreferenceDetails(){
+		
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+			
+			
+			$idGender = '';
+			$minAge = '';
+			$maxAge = '';
+			$idMaritalStatus = '';
+			$minHeight = '';
+			$maxHeight = '';
+			$idEatingHabit = '';
+			$idDrinkingHabit = '';
+			$idSmokingHabit = '';
+			$idMotherTongue = '';
+			$idReligion = '';
+			$idCaste = '';
+			$idSubCaste = '';
+			$idGothra = '';
+			$idNakshatra = '';
+			$idRashi = '';
+			$idQualification = '';
+			$idEmployement = '';
+			$myExpectation = '';
+			$idPersonalDetails = '';
+						
+			
+			if(isset($this->_request['IdGender']))
+			{
+				$idGender = $this->_request['IdGender'];
+				$minAge = $this->_request['MinAge'];
+				$maxAge = $this->_request['MaxAge'];
+				$idMaritalStatus = $this->_request['IdMaritalStatus'];
+				$minHeight = $this->_request['MinHeight'];
+				$maxHeight = $this->_request['MaxHeight'];
+				$idEatingHabit = $this->_request['IdEatingHabit'];
+				$idDrinkingHabit = $this->_request['IdDrinkingHabit'];
+				$idSmokingHabit = $this->_request['IdSmokingHabit'];
+				$idMotherTongue = $this->_request['IdMotherTongue'];
+				$idReligion = $this->_request['IdReligion'];
+				$idCaste = $this->_request['IdCaste'];
+				$idSubCaste = $this->_request['IdSubCaste'];
+				$idGothra = $this->_request['IdGothra'];
+				$idNakshatra = $this->_request['IdNakshatra'];
+				$idRashi = $this->_request['IdRashi'];
+				$idQualification = $this->_request['IdQualification'];
+				$idEmployement = $this->_request['IdEmployement'];
+				$myExpectation = $this->_request['MyExpectation'];
+				$idPersonalDetails = '1';
+			
+			}
+			
+			
+			$strSql = "Insert Into tblpartnerpreferencerequests(IdGender, MinAge, MaxAge, IdMaritalStatus, MinHieght, MaxHeight, IdEatingHabit, IdDrinkingHabit, IdSmokingHabit, IdMotherTongue, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, IdQualification, IdEmployement, MyExpectation, idPersonalDetails)";
+			$strSql = $strSql." Output Inserted.IdPartnerPreferences Values('$idGender', '$minAge', '$maxAge', '$idMaritalStatus', '$minHeight', '$maxHeight', '$idEatingHabit' '$idDrinkingHabit', '$idSmokingHabit', '$idMotherTongue', '$idReligion', '$idCaste' '$idSubCaste', '$idGothra' '$idNakshatra', '$idRashi', '$idQualification', '$idEmployement', '$myExpectation', '$idPersonalDetails')";
+			
+			mysql_query($strSql);
+			
+			$success = array('status' => "Success", "msg" => "Your Family Details Account Created Successfully.");
+			$this->response($this->json($success),200);
+			
+			// If invalid inputs "Bad Request" status message and reason
+			$error = array('status' => "Failed", "msg" => "Invalid Parameters / Input");
+			$this->response($this->json($error), 400);
+		}
 		
 		
 		
