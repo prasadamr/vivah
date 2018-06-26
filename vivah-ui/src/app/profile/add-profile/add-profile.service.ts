@@ -47,6 +47,8 @@ export class AddProfileService {
                     .map((reponse: Response) => reponse.json());
     }
 
+
+
     addProfessionalDetails(professionalDetails: ProfessionalDetails) {
         var params = "IdEmployement="+professionalDetails.IdEmployement
             +"&IdPersonalDetails="+professionalDetails.IdPersonalDetails
@@ -84,26 +86,25 @@ export class AddProfileService {
                     .map((reponse: Response) => reponse.json());
     }
 
+
+
     addPartnerPreference(partnerPreference: PartnerPreference) {
-        var params = "Address="+partnerPreference.IdCaste
-            +"&FatherName="+partnerPreference.IdDrinkingHabit
-            +"&FatherOccupation="+partnerPreference.IdEatingHabit
-            +"&IdFamilyType="+partnerPreference.IdEmployement
-            +"&IdPersonalDetails="+partnerPreference.IdGender
-            +"&MarriedBrothers="+partnerPreference.IdGothra
-            +"&MarriedSisters="+partnerPreference.IdMaritalStatus
-            +"&MotherName="+partnerPreference.IdMotherTongue
-            +"&MotherOccupation="+partnerPreference.IdNakshatra
-            +"&PhoneNumber="+partnerPreference.IdPersonalDetails
-            +"&TotalBrothers="+partnerPreference.IdQualification
-            +"&TotalSisters="+partnerPreference.IdRashi
-            +"&TotalSisters="+partnerPreference.IdReligion
-            +"&TotalSisters="+partnerPreference.IdSmokingHabit
-            +"&TotalSisters="+partnerPreference.IdSubCaste
-            +"&TotalSisters="+partnerPreference.MaxAge
-            +"&TotalSisters="+partnerPreference.MaxHeight
-            +"&TotalSisters="+partnerPreference.MinAge
-            +"&TotalSisters="+partnerPreference.MinHieght;
+        var params = "IdGender="+partnerPreference.IdGender
+            +"&MinAge="+partnerPreference.MinAge
+            +"&MaxAge="+partnerPreference.MaxAge
+            +"&IdMaritalStatus="+partnerPreference.IdMaritalStatus
+            +"&MinHieght="+partnerPreference.MinHieght
+            +"&MaxHeight="+partnerPreference.MaxHeight
+            +"&IdEatingHabit="+partnerPreference.IdEatingHabit
+            +"&IdDrinkingHabit="+partnerPreference.IdDrinkingHabit
+            +"&IdSmokingHabit="+partnerPreference.IdSmokingHabit
+            +"&IdMotherTongue="+partnerPreference.IdMotherTongue
+            +"&IdReligion="+partnerPreference.IdReligion
+            +"&IdCaste="+partnerPreference.IdCaste
+            +"&IdSubCaste="+partnerPreference.IdSubCaste
+            +"&IdQualification="+partnerPreference.IdQualification
+            +"&IdEmployement="+partnerPreference.IdEmployement
+            +"&MyExpectation="+partnerPreference.MyExpectation;
 
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');

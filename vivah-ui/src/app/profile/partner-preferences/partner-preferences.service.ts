@@ -109,32 +109,6 @@ export class PartnerPreferencesService {
         }
 
 
-              getGotraType():any{
-                var headers = new Headers();
-                headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-                return this._http.get(environment.API_ROOT_PATH + "getGotra", {headers: headers})
-                            .map((reponse: Response) => reponse.json());
-              }
-
-
-        getNakshatraTypes():any{
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-        return this._http.get(environment.API_ROOT_PATH + "getNakshatra", {headers: headers})
-                    .map((reponse: Response) => reponse.json());
-       }
-
-       getRashi(idNakshatra:number):any{
-       var headers = new Headers();
-       headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-       return this._http.get(environment.API_ROOT_PATH + "getRashi&idNakshatra="+idNakshatra, {headers: headers})
-                   .map((reponse: Response) => reponse.json());
-      }
-
-
 
       getQualificationType():any{
         var headers = new Headers();

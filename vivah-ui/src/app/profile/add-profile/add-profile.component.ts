@@ -73,18 +73,17 @@ export class AddProfileComponent implements OnInit {
       TotalBrothers: null,
       TotalSisters: null
     };
+
+
     this.partnerPreference = {
       IdCaste: null,
       IdEatingHabit: null,
       IdEmployement: null,
       IdGender: null,
-      IdGothra: null,
       IdMaritalStatus: null,
       IdMotherTongue: null,
-      IdNakshatra: null,
       IdPersonalDetails: null,
       IdQualification: null,
-      IdRashi: null,
       IdReligion: null,
       IdSmokingHabit: null,
       IdSubCaste: null,
@@ -92,8 +91,10 @@ export class AddProfileComponent implements OnInit {
       MaxHeight: null,
       MinAge: null,
       MinHieght: null,
-      IdDrinkingHabit: null
+      IdDrinkingHabit: null,
+      MyExpectation: null
     };
+
     this.professionalDetails = {
       IdEmployement: null,
       IdPersonalDetails: null,
@@ -116,7 +117,7 @@ export class AddProfileComponent implements OnInit {
        this.personalDetails.IdEatingHabbits != null && this.personalDetails.IdDrinkingHabit != null && this.personalDetails.IdSmokingHabit != null &&
        this.personalDetails.MobileNumber != null && this.personalDetails.PhysicalDisabilities != "" && this.personalDetails.AboutMe != "")
     {
-      
+
     this.service.addPersonalDetails(this.personalDetails).subscribe(
       (res: any) => {
         this.professionalDetails.IdPersonalDetails = res;

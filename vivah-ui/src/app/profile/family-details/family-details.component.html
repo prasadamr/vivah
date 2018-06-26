@@ -4,9 +4,10 @@
   <div class="card-block" align="center">
 
 
+
     <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-      <mat-select [(ngModel)]="model.IdFamilyType" id="familyType" name="familyType" placeholder="Choose Family Type">
+      <mat-select [(ngModel)]="model.IdFamilyType" id="IdFamilyType" name="IdFamilyType" placeholder="Choose Family Type">
         <mat-option *ngFor="let item of familyType" [value]="item.IdFamilyType">{{item.FamilyType}}</mat-option>
       </mat-select>
       </mat-form-field>
@@ -15,7 +16,7 @@
 
     <div fxLayout="row wrap" fxLayoutAlign="space-around center">
       <mat-form-field>
-         <input matInput [(ngModel)]="model.FatherName" id="fatherName" name="fatherName" placeholder="Father Name">
+         <input matInput [(ngModel)]="model.FatherName" id="FatherName" name="FatherName" placeholder="Father Name">
       </mat-form-field>
     </div>
 
@@ -24,7 +25,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 
   <mat-form-field>
-     <input matInput [(ngModel)]="model.FatherOccupation" id="fatherOccupation" name="fatherOccupation" placeholder="Father Occupation">
+     <input matInput [(ngModel)]="model.FatherOccupation" id="FatherOccupation" name="FatherOccupation" placeholder="Father Occupation">
   </mat-form-field>
 </div>
 
@@ -32,7 +33,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <mat-form-field>
-     <input matInput [(ngModel)]="model.MotherName" id="motherName" name="motherName" placeholder="Mother Name">
+     <input matInput [(ngModel)]="model.MotherName" id="MotherName" name="MotherName" placeholder="Mother Name">
   </mat-form-field>
 </div>
 
@@ -41,7 +42,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 
   <mat-form-field>
-     <input matInput [(ngModel)]="model.MotherOccupation" id="motherOccupation" name="motherOccupation" placeholder="Mother Occupation">
+     <input matInput [(ngModel)]="model.MotherOccupation" id="MotherOccupation" name="MotherOccupation" placeholder="Mother Occupation">
   </mat-form-field>
 </div>
 
@@ -51,9 +52,9 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <table>
 <td><mat-form-field>
-  <input type="number" matInput placeholder="Total Brothers" min="1" step="1" [(ngModel)]="model.TotalBrothers" id="totalBrothers" name="totalBrothers">
+  <input type="number" matInput placeholder="Total Brothers" min="1" step="1" [(ngModel)]="model.TotalBrothers" id="TotalBrothers" name="TotalBrothers">
 </mat-form-field><td>
-<td><mat-form-field><input type="number" matInput placeholder="Married Brothers" min="1" step="1" [(ngModel)]="model.MarriedBrothers" id="marriedBrothers" name="marriedBrothers">
+<td><mat-form-field><input type="number" matInput placeholder="Married Brothers" min="1" step="1" [(ngModel)]="model.MarriedBrothers" id="MarriedBrothers" name="MarriedBrothers">
 </mat-form-field><td>
 </table>
 </div>
@@ -63,18 +64,20 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
   <table>
 <td><mat-form-field>
-  <input type="number" matInput placeholder="Total Sisters" min="1" step="1" [(ngModel)]="model.TotalSisters" id="totalSisters" name="totalSisters">
+  <input type="number" matInput placeholder="Total Sisters" min="1" step="1" [(ngModel)]="model.TotalSisters" id="TotalSisters" name="TotalSisters">
 </mat-form-field><td>
-<td><mat-form-field><input type="number" matInput placeholder="Married Sisters" min="1" step="1" [(ngModel)]="model.MarriedSisters" id="marriedSisters" name="marriedSisters">
+<td><mat-form-field><input type="number" matInput placeholder="Married Sisters" min="1" step="1" [(ngModel)]="model.MarriedSisters" id="MarriedSisters" name="MarriedSisters">
 </mat-form-field><td>
 </table>
 </div>
 <br>
+
+
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 
        <mat-form-field>
-          <input matInput name="MobileNumber" id="MobileNumber" [(ngModel)]="model.mobileNum" placeholder="Enter Mobile Number">
+          <input matInput name="PhoneNumber" id="PhoneNumber" [(ngModel)]="model.PhoneNumber" placeholder="Enter Mobile Number">
        </mat-form-field>
 
 </div>
@@ -83,7 +86,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
 <mat-form-field>
-<textarea class="form-control" matInput [(ngModel)]="model.Address" id="address" name="address" placeholder="Family Address"></textarea>
+<textarea class="form-control" matInput [(ngModel)]="model.Address" id="Address" name="Address" placeholder="Family Address"></textarea>
 </mat-form-field>
 </div>
 <br>

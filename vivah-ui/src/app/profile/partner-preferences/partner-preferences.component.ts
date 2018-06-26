@@ -27,12 +27,6 @@ export class PartnerPreferencesComponent implements OnInit {
 
   subcaste:any[];
 
-  gotraType:any[];
-
-  nakshatra:any[];
-
-  rashi:any[];
-
   qualificationType:any[];
 
   employmentType:any[];
@@ -64,13 +58,13 @@ export class PartnerPreferencesComponent implements OnInit {
 
       this.subcaste = [];
 
-      this.gotraType = [];
-      this.getGotraType();
+//      this.gotraType = [];
+  //    this.getGotraType();
 
-      this.nakshatra = [];
-      this.getNakshatraTypes();
+    //  this.nakshatra = [];
+    //  this.getNakshatraTypes();
 
-      this.rashi = [];
+    //  this.rashi = [];
 
       this.qualificationType = [];
       this.getQualificationType();
@@ -87,9 +81,7 @@ export class PartnerPreferencesComponent implements OnInit {
     if (this.model.IdCaste) {
       this.getSubcaste(this.model.IdCaste);
     }
-    if (this.model.IdNakshatra) {
-      this.getRashi(this.model.IdNakshatra);
-    }
+
   }
 
 
@@ -203,45 +195,6 @@ export class PartnerPreferencesComponent implements OnInit {
           },
           (error) => {
             alert("Get Sub Caste failed");
-          }
-        );
-      }
-
-
-      getGotraType(){
-        this.service.getGotraType().subscribe(
-          (response)=> {
-            this.gotraType = response;
-          },
-          (error) => {
-            alert("Get Gotra type failed");
-          }
-        );
-      }
-
-
-      getNakshatraTypes(){
-        this.service.getNakshatraTypes().subscribe(
-          (response)=> {
-            this.nakshatra = response;
-          },
-          (error) => {
-            alert("Get Nakshatra type failed");
-          }
-        );
-      }
-
-      onChangeNakshatra(idNakshatra:number){
-         this.getRashi(this.model.IdNakshatra);
-      }
-
-      getRashi(idNakshatra:number){
-        this.service.getRashi(idNakshatra).subscribe(
-          (response)=> {
-            this.rashi = response;
-          },
-          (error) => {
-            alert("Get Rashi type failed");
           }
         );
       }

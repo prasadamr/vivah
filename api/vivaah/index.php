@@ -112,17 +112,18 @@
 			$idMaritalStatus = '';
 			$height = '';
 			$idEatingHabbits = '';
-			$idMothertongue = '';
 			$idDrinkingHabit = '';
 			$idSmokingHabit = '';
 			$physicalDisabilities = '';
 			$aboutMe = '';
+			
 		 	$idReligion = '';
 			$idCaste = '';
 			$idSubCaste = '';
 			$idGothra = '';
 			$idNakshatra = '';
             $idRashi = '';
+			$idMothertongue = '';
 			$userId = '';
 			
 
@@ -156,8 +157,16 @@
 			}
 			
 			
+			
 			$strSql = "Insert Into tblcandidatepersoneldetails(Name, IdGender, MobileNumber, ProfilePicPath, DOB, Email, IdMaritalStatus, Height, IdEatingHabit, IdMothertongue, IdDrinkingHabit, IdSmokingHabit, PhysicalDisabilities, AboutMe, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, userId)";
-			$strSql = $strSql." Output Inserted.IdPersonalDetails Values('$userName', '$idGender', '$mobileNumber', '$profilePicPath', '$userDob', '$email ', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
+			$strSql = $strSql." Values('$userName', '$idGender', '$mobileNumber', '$profilePicPath', '$userDob', '$email ', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
+			
+			
+			
+		//	$strSql = "Insert Into tblcandidatepersoneldetails(Name, IdGender, MobileNumber, ProfilePicPath, DOB, Email, IdMaritalStatus, Height, IdEatingHabit, IdMothertongue, IdDrinkingHabit, IdSmokingHabit, PhysicalDisabilities, AboutMe, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, userId)";
+		//	$strSql = $strSql." Output Inserted.IdPersonalDetails Values('$userName', '$idGender', '$mobileNumber', '$profilePicPath', '$userDob', '$email ', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
+			
+			
 			
 			mysql_query($strSql);
 			
@@ -204,7 +213,7 @@
 			
 			
 			$strSql = "Insert Into tblcandidateprofessionaldetails(IdQualification, IdEmployement, Occupation, MothtlyIncome, WorkLocation, OfficeAddress, IdPersonalDetails)";
-			$strSql = $strSql." Output Inserted.IdProfessionalDetails Values('$idQualification', '$idEmployement', '$occupation', '$mothtlyIncome', '$workLocation', '$officeAddress', '$idPersonalDetails')";
+			$strSql = $strSql." Values('$idQualification', '$idEmployement', '$occupation', '$mothtlyIncome', '$workLocation', '$officeAddress', '$idPersonalDetails')";
 			
 			mysql_query($strSql);
 			
@@ -235,6 +244,7 @@
 			$marriedBrothers = '';
 			$address = '';
 			$phoneNumber = '';
+			
 			$idPersonalDetails = '';
 			
 
@@ -259,7 +269,7 @@
 			
 			
 			$strSql = "Insert Into tblcandidatefamilydetails(IdFamilyType, FatherName, FatherOccupation, MotherName, MotherOccupation, TotalSisters, MarriedSisters, TotalBrothers, MarriedBrothers, Address, PhoneNumber, IdPersonalDetails)";
-			$strSql = $strSql." Output Inserted.IdFamilyDetails Values('$idFamilyType', '$fatherName', '$fatherOccupation', '$motherName', '$motherOccupation', '$totalSisters', '$marriedSisters' '$totalBrothers', '$marriedBrothers', '$address', '$phoneNumber', '$idPersonalDetails')";
+			$strSql = $strSql." Values('$idFamilyType', '$fatherName', '$fatherOccupation', '$motherName', '$motherOccupation', '$totalSisters', '$marriedSisters' '$totalBrothers', '$marriedBrothers', '$address', '$phoneNumber', '$idPersonalDetails')";
 			
 			mysql_query($strSql);
 			
@@ -301,6 +311,7 @@
 			$idQualification = '';
 			$idEmployement = '';
 			$myExpectation = '';
+			
 			$idPersonalDetails = '';
 						
 			
@@ -318,7 +329,7 @@
 				$idMotherTongue = $this->_request['IdMotherTongue'];
 				$idReligion = $this->_request['IdReligion'];
 				$idCaste = $this->_request['IdCaste'];
-				$idSubCaste = $this->_request['IdSubCaste'];
+				$idSubCaste = $this->_request ['IdSubCaste'];
 				$idGothra = $this->_request['IdGothra'];
 				$idNakshatra = $this->_request['IdNakshatra'];
 				$idRashi = $this->_request['IdRashi'];
@@ -331,7 +342,7 @@
 			
 			
 			$strSql = "Insert Into tblpartnerpreferencerequests(IdGender, MinAge, MaxAge, IdMaritalStatus, MinHieght, MaxHeight, IdEatingHabit, IdDrinkingHabit, IdSmokingHabit, IdMotherTongue, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, IdQualification, IdEmployement, MyExpectation, idPersonalDetails)";
-			$strSql = $strSql." Output Inserted.IdPartnerPreferences Values('$idGender', '$minAge', '$maxAge', '$idMaritalStatus', '$minHeight', '$maxHeight', '$idEatingHabit' '$idDrinkingHabit', '$idSmokingHabit', '$idMotherTongue', '$idReligion', '$idCaste' '$idSubCaste', '$idGothra' '$idNakshatra', '$idRashi', '$idQualification', '$idEmployement', '$myExpectation', '$idPersonalDetails')";
+			$strSql = $strSql." Values('$idGender', '$minAge', '$maxAge', '$idMaritalStatus', '$minHeight', '$maxHeight', '$idEatingHabit' '$idDrinkingHabit', '$idSmokingHabit', '$idMotherTongue', '$idReligion', '$idCaste' '$idSubCaste', '$idGothra' '$idNakshatra', '$idRashi', '$idQualification', '$idEmployement', '$myExpectation', '$idPersonalDetails')";
 			
 			mysql_query($strSql);
 			
