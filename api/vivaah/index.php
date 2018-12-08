@@ -797,6 +797,33 @@
 		
 		
 	
+	
+		private function getProfiles(){	
+		
+			// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			$strSql = "SELECT * From tblcandidatepersoneldetails Order By IdPersonalDetails";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+	
+	
+	
 		
 		/*
 		 *	Encode array into JSON
