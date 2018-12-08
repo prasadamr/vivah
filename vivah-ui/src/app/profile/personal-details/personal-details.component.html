@@ -32,7 +32,7 @@
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-  <input type="file" name="ProfilePicPath" id="ProfilePicPath" [(ngModel)]="model.ProfilePicPath" accept="image/gif, image/jpeg" title="Choose Profile Picture" class="btn btn-primary">
+  <input type="file" name="ProfilePicPath" id="ProfilePicPath" (change)="onFileSelected($event)" (click)="onUpload()" [(ngModel)]="model.ProfilePicPath" accept="image/gif, image/jpeg" title="Choose Profile Picture" class="btn btn-primary">
   <label for="selectPic"  placeholder="Add Profile Picture"></label>
 </div>
 

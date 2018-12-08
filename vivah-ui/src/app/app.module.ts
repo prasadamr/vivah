@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgMode
 import { HttpModule } from "@angular/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {HttpClientModule} from '@angular/common/http';
 
 import {
   MatAutocompleteModule,
@@ -74,6 +75,7 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserAnimationsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     MatAutocompleteModule,
     MatButtonModule,

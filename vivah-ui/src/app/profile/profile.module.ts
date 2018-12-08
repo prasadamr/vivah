@@ -4,6 +4,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AddProfileRoutingModule } from './profile-routing.module';
 import { AddProfileComponent } from './add-profile/add-profile.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { ReligionDetailsComponent } from './religion-details/religion-details.component';
 import { FamilyDetailsComponent } from './family-details/family-details.component';
@@ -16,6 +17,7 @@ import { ReligionDetailsService } from './religion-details/religion-details.serv
 import { ProfessionalDetailsService } from './professional-details/professional-details.service';
 import { PartnerPreferencesService } from './partner-preferences/partner-preferences.service';
 import { AddProfileService } from './add-profile/add-profile.service';
+import { ViewProfileService } from './view-profile/view-profile.service';
 
 
 import {
@@ -99,14 +101,16 @@ import {
   ReligionDetailsComponent,
   PartnerPreferencesComponent,
   ProfessionalDetailsComponent,
-  FamilyDetailsComponent
+  FamilyDetailsComponent,
+  ViewProfileComponent
   ],
   providers: [PersonalDetailsService,
               FamilyDetailsService,
               ReligionDetailsService,
               ProfessionalDetailsService,
               PartnerPreferencesService,
-              AddProfileService
+              AddProfileService,
+              ViewProfileService
               ],
 })
 export class ProfileModule { }

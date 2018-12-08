@@ -61,7 +61,7 @@ export class AddProfileService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-        return this._http.post(environment.API_ROOT_PATH + "", params, {headers: headers})
+        return this._http.post(environment.API_ROOT_PATH + "addProfessionalnalDetails", params, {headers: headers})
                     .map((reponse: Response) => reponse.json());
     }
 
@@ -82,7 +82,7 @@ export class AddProfileService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-        return this._http.post(environment.API_ROOT_PATH + "", params, {headers: headers})
+        return this._http.post(environment.API_ROOT_PATH + "addFamilyDetails", params, {headers: headers})
                     .map((reponse: Response) => reponse.json());
     }
 
@@ -109,7 +109,7 @@ export class AddProfileService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-        return this._http.post(environment.API_ROOT_PATH + "", params, {headers: headers})
+        return this._http.post(environment.API_ROOT_PATH + "partnerPreferenceDetails", params, {headers: headers})
                     .map((reponse: Response) => reponse.json());
     }
 }

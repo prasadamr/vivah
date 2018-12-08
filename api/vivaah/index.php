@@ -116,7 +116,6 @@
 			$idSmokingHabit = '';
 			$physicalDisabilities = '';
 			$aboutMe = '';
-			
 		 	$idReligion = '';
 			$idCaste = '';
 			$idSubCaste = '';
@@ -170,7 +169,7 @@
 			
 			mysql_query($strSql);
 			
-			$success = array('status' => "Success", "msg" => "Your Personal Account Created Successfully.");
+			$success = array('status' => "Success", "msg" => "Your Personal Account Created Successfully.", "id" => 1);
 			$this->response($this->json($success),200);
 			
 			// If invalid inputs "Bad Request" status message and reason
@@ -207,7 +206,7 @@
 				$occupation = $this->_request['Occupation'];
 				$officeAddress = $this->_request['OfficeAddress'];
 				$workLocation = $this->_request['WorkLocation'];
-				$idPersonalDetails = '1';
+				$idPersonalDetails = $this->_request['IdPersonalDetails'];
 
 			}
 			
@@ -264,12 +263,12 @@
 				$address = $this->_request['Address'];
 				$phoneNumber = $this->_request['PhoneNumber'];
 				$idPersonalDetails = '1';
-			
+				
 			}
 			
 			
 			$strSql = "Insert Into tblcandidatefamilydetails(IdFamilyType, FatherName, FatherOccupation, MotherName, MotherOccupation, TotalSisters, MarriedSisters, TotalBrothers, MarriedBrothers, Address, PhoneNumber, IdPersonalDetails)";
-			$strSql = $strSql." Values('$idFamilyType', '$fatherName', '$fatherOccupation', '$motherName', '$motherOccupation', '$totalSisters', '$marriedSisters' '$totalBrothers', '$marriedBrothers', '$address', '$phoneNumber', '$idPersonalDetails')";
+			$strSql = $strSql." Values('$idFamilyType', '$fatherName', '$fatherOccupation', '$motherName', '$motherOccupation', '$totalSisters', '$marriedSisters', '$totalBrothers', '$marriedBrothers', '$address', '$phoneNumber', '$idPersonalDetails')";
 			
 			mysql_query($strSql);
 			
@@ -330,9 +329,6 @@
 				$idReligion = $this->_request['IdReligion'];
 				$idCaste = $this->_request['IdCaste'];
 				$idSubCaste = $this->_request ['IdSubCaste'];
-				$idGothra = $this->_request['IdGothra'];
-				$idNakshatra = $this->_request['IdNakshatra'];
-				$idRashi = $this->_request['IdRashi'];
 				$idQualification = $this->_request['IdQualification'];
 				$idEmployement = $this->_request['IdEmployement'];
 				$myExpectation = $this->_request['MyExpectation'];
@@ -341,17 +337,19 @@
 			}
 			
 			
-			$strSql = "Insert Into tblpartnerpreferencerequests(IdGender, MinAge, MaxAge, IdMaritalStatus, MinHieght, MaxHeight, IdEatingHabit, IdDrinkingHabit, IdSmokingHabit, IdMotherTongue, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, IdQualification, IdEmployement, MyExpectation, idPersonalDetails)";
-			$strSql = $strSql." Values('$idGender', '$minAge', '$maxAge', '$idMaritalStatus', '$minHeight', '$maxHeight', '$idEatingHabit' '$idDrinkingHabit', '$idSmokingHabit', '$idMotherTongue', '$idReligion', '$idCaste' '$idSubCaste', '$idGothra' '$idNakshatra', '$idRashi', '$idQualification', '$idEmployement', '$myExpectation', '$idPersonalDetails')";
+			$strSql = "Insert Into tblpartnerpreferencerequests(IdGender, MinAge, MaxAge, IdMaritalStatus, MinHieght, MaxHeight, IdEatingHabit, IdDrinkingHabit, IdSmokingHabit, IdMotherTongue, IdReligion, IdCaste, IdSubCaste, IdQualification, IdEmployement, MyExpectation, idPersonalDetails)";
+			$strSql = $strSql." Values('$idGender', '$minAge', '$maxAge', '$idMaritalStatus', '$minHeight', '$maxHeight', '$idEatingHabit', '$idDrinkingHabit', '$idSmokingHabit', '$idMotherTongue', '$idReligion', '$idCaste', '$idSubCaste', '$idQualification', '$idEmployement', '$myExpectation', '$idPersonalDetails')";
 			
 			mysql_query($strSql);
 			
-			$success = array('status' => "Success", "msg" => "Your Family Details Account Created Successfully.");
+			
+			$success = array('status' => "Success", "msg" => "Your Partner Preference Details Account Created Successfully.");
 			$this->response($this->json($success),200);
 			
 			// If invalid inputs "Bad Request" status message and reason
 			$error = array('status' => "Failed", "msg" => "Invalid Parameters / Input");
 			$this->response($this->json($error), 400);
+
 		}
 		
 		

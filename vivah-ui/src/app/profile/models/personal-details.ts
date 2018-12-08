@@ -3,7 +3,7 @@ export interface PersonalDetails {
     IdGender: number;
     MobileNumber: number;
     ProfilePicPath:string;
-    DOB: Date;
+    DOB: any;
     Email:string;
     IdMaritalStatus: number;
     Height: string;

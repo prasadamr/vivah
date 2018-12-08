@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import {PersonalDetailsService} from './personal-details.service';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import {HttpClient} from '@angular/common/http';
+
+
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -16,6 +19,20 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./personal-details.component.css']
 })
 export class PersonalDetailsComponent implements OnInit {
+
+selectedFile = null;
+
+constructor(private http:HttpClient){}
+
+onFileSelected(event){
+  this.selectedFile = event.target.file[0];
+}
+
+onUpload(){
+
+}
+
+
   @Input() model: any;
   genders: any[];
 

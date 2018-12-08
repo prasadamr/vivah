@@ -4,6 +4,7 @@ import { PartnerPreference } from '../models/partner-preference';
 import { FamilyDetails } from '../models/family-details';
 import { ProfessionalDetails } from '../models/professional-details';
 import {AddProfileService} from './add-profile.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-add-profile',
@@ -37,72 +38,72 @@ export class AddProfileComponent implements OnInit {
 
   defaultValues() {
     this.personalDetails = {
-      Name: null,
-      IdGender: null,
-      DOB: null,
-      Email:null,
-      ProfilePicPath:null,
-      IdMaritalStatus: null,
-      Height: null,
-      IdEatingHabbits: null,
-      IdReligion: null,
-      IdCaste:null,
-      IdSubCaste:null,
-      IdGothra:null,
-      IdNakshatra:null,
-      IdRashi:null,
-      IdMothertongue:null,
-      IdDrinkingHabit: null,
-      IdSmokingHabit:null,
-      MobileNumber: null,
-      PhysicalDisabilities: null,
-      AboutMe:null,
-      UserId: null
+      Name: 'efds',
+      IdGender: 101,
+      DOB: 'null',
+      Email:'gr@hh.com',
+      ProfilePicPath:'image.jpg',
+      IdMaritalStatus: 1001,
+      Height: '5.9',
+      IdEatingHabbits: 111,
+      IdReligion: 1,
+      IdCaste:12,
+      IdSubCaste:111,
+      IdGothra:1,
+      IdNakshatra:101,
+      IdRashi:101,
+      IdMothertongue:101,
+      IdDrinkingHabit: 101,
+      IdSmokingHabit:1,
+      MobileNumber: 998989898,
+      PhysicalDisabilities: 'hjjdsf',
+      AboutMe:'sjdhfj',
+      UserId: 0
     };
     this.familyDetails = {
-      Address: null,
-      FatherName: null,
-      FatherOccupation: null,
-      IdFamilyType: null,
+      Address: 'jsdfh',
+      FatherName: 'null',
+      FatherOccupation: 'null',
+      IdFamilyType: 1,
       IdPersonalDetails: null,
-      MarriedBrothers: null,
-      MarriedSisters: null,
-      MotherName: null,
-      MotherOccupation: null,
-      PhoneNumber: null,
-      TotalBrothers: null,
-      TotalSisters: null
+      MarriedBrothers: 1,
+      MarriedSisters: 1,
+      MotherName: 'null',
+      MotherOccupation: 'null',
+      PhoneNumber: '999899889',
+      TotalBrothers: 1,
+      TotalSisters: 1
     };
 
 
     this.partnerPreference = {
-      IdCaste: null,
-      IdEatingHabit: null,
-      IdEmployement: null,
-      IdGender: null,
-      IdMaritalStatus: null,
-      IdMotherTongue: null,
+      IdCaste: 12,
+      IdEatingHabit: 111,
+      IdEmployement: 101,
+      IdGender: 101,
+      IdMaritalStatus: 1001,
+      IdMotherTongue: 101,
       IdPersonalDetails: null,
-      IdQualification: null,
-      IdReligion: null,
-      IdSmokingHabit: null,
-      IdSubCaste: null,
-      MaxAge: null,
-      MaxHeight: null,
-      MinAge: null,
-      MinHieght: null,
-      IdDrinkingHabit: null,
-      MyExpectation: null
+      IdQualification: 1,
+      IdReligion: 1,
+      IdSmokingHabit: 1,
+      IdSubCaste: 111,
+      MaxAge: 28,
+      MaxHeight: 6,
+      MinAge: 19,
+      MinHieght: 5,
+      IdDrinkingHabit: 101,
+      MyExpectation: 'null'
     };
 
     this.professionalDetails = {
-      IdEmployement: null,
+      IdEmployement: 101,
       IdPersonalDetails: null,
-      IdQualification: null,
-      MothtlyIncome: null,
-      Occupation: null,
-      OfficeAddress: null,
-      WorkLocation: null
+      IdQualification: 1,
+      MothtlyIncome: 50000,
+      Occupation: 'null',
+      OfficeAddress: 'null',
+      WorkLocation: 'null'
     };
   }
 
@@ -117,12 +118,12 @@ export class AddProfileComponent implements OnInit {
        this.personalDetails.IdEatingHabbits != null && this.personalDetails.IdDrinkingHabit != null && this.personalDetails.IdSmokingHabit != null &&
        this.personalDetails.MobileNumber != null && this.personalDetails.PhysicalDisabilities != "" && this.personalDetails.AboutMe != "")
     {
-
+      this.personalDetails.DOB = moment(this.personalDetails.DOB).format("YYYY-MM-DD");
     this.service.addPersonalDetails(this.personalDetails).subscribe(
       (res: any) => {
-        this.professionalDetails.IdPersonalDetails = res;
-        this.familyDetails.IdPersonalDetails = res;
-        this.partnerPreference.IdPersonalDetails = res;
+        this.professionalDetails.IdPersonalDetails = res.id;
+        this.familyDetails.IdPersonalDetails = res.id;
+        this.partnerPreference.IdPersonalDetails = res.id;
         this.addProfessionalDetails();
       },
       (error: Error) => {
