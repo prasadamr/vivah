@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ViewProfileComponent implements OnInit {
 
   profiles: any[];
+  blankImage = "../../../images/blank-profile-picture.png";
 
   constructor(private service:ViewProfileService, public _sanitizer: DomSanitizer) {
     this.profiles = [];

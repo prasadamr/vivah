@@ -7,7 +7,7 @@
         <mat-card-title>{{profile.Name}}</mat-card-title>
         <mat-card-subtitle>{{profile.Email}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="_sanitizer.bypassSecurityTrustResourceUrl(profile.Image)" alt="Photo of a Shiba Inu">
+      <img mat-card-image [src]="profile.Image ? _sanitizer.bypassSecurityTrustResourceUrl(profile.Image) : blankImage" alt="Photo of a Shiba Inu">
       <mat-card-content>
         <p>
           {{profile.AboutMe}}

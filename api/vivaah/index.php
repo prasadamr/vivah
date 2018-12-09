@@ -155,13 +155,18 @@
 				
 				define('UPLOAD_DIR', 'uploads/');
 				
-				$img = $_REQUEST['ProfilePicPath'];
-				$img = str_replace('data:image/jpeg;base64,', '', $img);
-				$img = str_replace(' ', '+', $img);
-				$data = base64_decode($img);
-				$basename=uniqid();
-				$file = UPLOAD_DIR . $basename . '.png';
-				$success=file_put_contents($file, $data);
+				if ($this->_request['ProfilePicPath']) {
+					$img = $_REQUEST['ProfilePicPath'];
+					$img = str_replace('data:image/jpeg;base64,', '', $img);
+					$img = str_replace(' ', '+', $img);
+					$data = base64_decode($img);
+					$basename=uniqid();
+					$file = UPLOAD_DIR . $basename . '.png';
+					$success=file_put_contents($file, $data);
+				} else {
+					$file = '';
+				}
+				
 
 			}
 			
@@ -823,10 +828,15 @@
 				$result = array();
 				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
 					$path = $rlt['ProfilePicPath'];
-					$type = pathinfo($path, PATHINFO_EXTENSION);
-					$data = file_get_contents($path);
-					$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-					$rlt['Image'] = $base64;
+					if ($path) {
+						$type = pathinfo($path, PATHINFO_EXTENSION);
+						$data = file_get_contents($path);
+						$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+						$rlt['Image'] = $base64;
+					} else {
+						$rlt['Image'] = '';
+					}
+					
 					$result[] = $rlt;
 				}
 				

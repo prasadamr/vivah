@@ -43,7 +43,7 @@ export class AddProfileComponent implements OnInit {
       IdGender: 101,
       DOB: 'null',
       Email:'gr@hh.com',
-      ProfilePicPath:'image.jpg',
+      ProfilePicPath:'',
       IdMaritalStatus: 1001,
       Height: '5.9',
       IdEatingHabbits: 111,
