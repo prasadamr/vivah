@@ -133,7 +133,7 @@
 				$userName = $this->_request['Name'];
 				$idGender = $this->_request['IdGender'];
 				$mobileNumber = $this->_request['MobileNumber'];
-				$profilePicPath = $this->_request['ProfilePicPath'];
+				//$profilePicPath = $this->_request['ProfilePicPath'];
 				$userDob = $this->_request['DOB'];
 				$email = $this->_request['Email'];
 				$idMaritalStatus = $this->_request['IdMaritalStatus'];
@@ -152,13 +152,23 @@
 				$idRashi = $this->_request['IdRashi'];
 				
 				$userId = '1';
+				
+				define('UPLOAD_DIR', 'uploads/');
+				
+				$img = $_REQUEST['ProfilePicPath'];
+				$img = str_replace('data:image/jpeg;base64,', '', $img);
+				$img = str_replace(' ', '+', $img);
+				$data = base64_decode($img);
+				$basename=uniqid();
+				$file = UPLOAD_DIR . $basename . '.png';
+				$success=file_put_contents($file, $data);
 
 			}
 			
 			
 			
 			$strSql = "Insert Into tblcandidatepersoneldetails(Name, IdGender, MobileNumber, ProfilePicPath, DOB, Email, IdMaritalStatus, Height, IdEatingHabit, IdMothertongue, IdDrinkingHabit, IdSmokingHabit, PhysicalDisabilities, AboutMe, IdReligion, IdCaste, IdSubCaste, IdGothra, IdNakshatra, IdRashi, userId)";
-			$strSql = $strSql." Values('$userName', '$idGender', '$mobileNumber', '$profilePicPath', '$userDob', '$email ', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
+			$strSql = $strSql." Values('$userName', '$idGender', '$mobileNumber', '$file', '$userDob', '$email ', '$idMaritalStatus', '$height', '$idEatingHabbits', '$idMothertongue', '$idDrinkingHabit', '$idSmokingHabit', '$physicalDisabilities', '$aboutMe', '$idReligion', '$idCaste', '$idSubCaste', '$idGothra', '$idNakshatra', '$idRashi', '$userId')";
 			
 			
 			
@@ -812,6 +822,11 @@
 			if(mysql_num_rows($sql) > 0){
 				$result = array();
 				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$path = $rlt['ProfilePicPath'];
+					$type = pathinfo($path, PATHINFO_EXTENSION);
+					$data = file_get_contents($path);
+					$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+					$rlt['Image'] = $base64;
 					$result[] = $rlt;
 				}
 				
