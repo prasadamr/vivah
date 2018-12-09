@@ -113,11 +113,11 @@ export class AddProfileComponent implements OnInit {
   save():void {
 
 
-    if(this.personalDetails.Name != "" && this.personalDetails.IdGender != null && this.personalDetails.DOB != null && this.personalDetails.Email != "" &&
-       this.personalDetails.ProfilePicPath != "" && this.personalDetails.IdMaritalStatus != null && this.personalDetails.Height != "" &&
-       this.personalDetails.IdEatingHabbits != null && this.personalDetails.IdDrinkingHabit != null && this.personalDetails.IdSmokingHabit != null &&
-       this.personalDetails.MobileNumber != null && this.personalDetails.PhysicalDisabilities != "" && this.personalDetails.AboutMe != "")
-    {
+    // if(this.personalDetails.Name != "" && this.personalDetails.IdGender != null && this.personalDetails.DOB != null && this.personalDetails.Email != "" &&
+    //    this.personalDetails.ProfilePicPath != "" && this.personalDetails.IdMaritalStatus != null && this.personalDetails.Height != "" &&
+    //    this.personalDetails.IdEatingHabbits != null && this.personalDetails.IdDrinkingHabit != null && this.personalDetails.IdSmokingHabit != null &&
+    //    this.personalDetails.MobileNumber != null && this.personalDetails.PhysicalDisabilities != "" && this.personalDetails.AboutMe != "")
+    // {
       this.personalDetails.DOB = moment(this.personalDetails.DOB).format("YYYY-MM-DD");
     this.service.addPersonalDetails(this.personalDetails).subscribe(
       (res: any) => {
@@ -130,9 +130,9 @@ export class AddProfileComponent implements OnInit {
         alert("Adding Personal Details Failed");
       }
     );
-  }
-  else
-  alert('Please Enter All the Fields');
+  // }
+  // else
+  // alert('Please Enter All the Fields');
 
 }
 

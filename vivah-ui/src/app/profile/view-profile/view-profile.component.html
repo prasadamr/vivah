@@ -3,11 +3,11 @@
   <div class="col-md-4" *ngFor="let profile of profiles">
     <mat-card class="example-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title>{{profile.Name}}</mat-card-title>
         <mat-card-subtitle>{{profile.Email}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image [src]="_sanitizer.bypassSecurityTrustResourceUrl(profile.Image)" alt="Photo of a Shiba Inu">
       <mat-card-content>
         <p>
           {{profile.AboutMe}}

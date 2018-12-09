@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ViewProfileService} from './view-profile.service'
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-view-profile',
@@ -10,7 +11,7 @@ export class ViewProfileComponent implements OnInit {
 
   profiles: any[];
 
-  constructor(private service:ViewProfileService) {
+  constructor(private service:ViewProfileService, public _sanitizer: DomSanitizer) {
     this.profiles = [];
     this.getProfiles();
   }

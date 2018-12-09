@@ -110,6 +110,6 @@ export class AddProfileService {
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
         return this._http.post(environment.API_ROOT_PATH + "partnerPreferenceDetails", params, {headers: headers})
-                    .map((reponse: Response) => reponse.json());
+                    .map((reponse: Response) => reponse);
     }
 }

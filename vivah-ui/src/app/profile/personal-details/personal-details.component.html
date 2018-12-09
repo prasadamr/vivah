@@ -32,10 +32,13 @@
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-  <input type="file" name="ProfilePicPath" id="ProfilePicPath" (change)="onFileSelected($event)" (click)="onUpload()" [(ngModel)]="model.ProfilePicPath" accept="image/gif, image/jpeg" title="Choose Profile Picture" class="btn btn-primary">
+  <input type="file" name="ProfilePicPath" id="ProfilePicPath" (change)="onSelectFile($event)" accept="image/gif, image/jpeg" title="Choose Profile Picture" class="btn btn-primary">
   <label for="selectPic"  placeholder="Add Profile Picture"></label>
 </div>
 
+<br>
+
+<img mat-card-image [src]="model.ProfilePicPath" alt="Photo of a Shiba Inu">
 <br>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">

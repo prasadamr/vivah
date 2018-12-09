@@ -2,7 +2,7 @@ export interface PersonalDetails {
     Name: string;
     IdGender: number;
     MobileNumber: number;
-    ProfilePicPath:string;
+    ProfilePicPath:any;
     DOB: any;
     Email:string;
     IdMaritalStatus: number;
