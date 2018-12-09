@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { PersonalDetails } from '../models/personal-details';
 import { PartnerPreference } from '../models/partner-preference';
 import { FamilyDetails } from '../models/family-details';
@@ -22,6 +22,7 @@ export class AddProfileComponent implements OnInit {
   partnerPreference: PartnerPreference;
   familyDetails: FamilyDetails;
   professionalDetails: ProfessionalDetails;
+
 
   constructor(private service: AddProfileService) {
     this.closeTabs();
@@ -108,6 +109,22 @@ export class AddProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+    window.scrollTo({top: 250});
+  }
+
+  prevStep() {
+    this.step--;
+    window.scrollTo({top: 250});
   }
 
   save():void {

@@ -1,11 +1,109 @@
-<form align="center">
+<form #panel>
   <div class="page-header" align="center" margin="10px">
   <h1>Add New Profile</h1>
  </div>
 
  <h4>Complete the following steps</h4>
 
-  <div align="center">
+ <mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal Details
+      </mat-panel-title>
+      <mat-panel-description>
+        Fill your personal details.
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-personal-details [model]="personalDetails"></app-personal-details>
+
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Family Details
+      </mat-panel-title>
+      <mat-panel-description>
+        Fill your family details
+        <mat-icon>people</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-family-details [model] ="familyDetails"></app-family-details>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Religion Details
+      </mat-panel-title>
+      <mat-panel-description>
+        Fill your religion details
+        <mat-icon>notifications</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-religion-details [model] ="personalDetails"></app-religion-details>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Professional Details
+      </mat-panel-title>
+      <mat-panel-description>
+        Fill your professional details
+        <mat-icon>school</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-professional-details [model] ="professionalDetails"></app-professional-details>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Partner Preferences
+      </mat-panel-title>
+      <mat-panel-description>
+        Fill your partner preferences
+        <mat-icon>favorite</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-partner-preferences [model] ="partnerPreference"></app-partner-preferences>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="save()">Save</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+
+  <!-- <div align="center">
     <a href="javascript:void(0);" (click)="closeTabs(); isPersonalDetails=true;">Personal Details</a>
     <div *ngIf="isPersonalDetails">
       <app-personal-details [model]="personalDetails"></app-personal-details>
@@ -42,6 +140,6 @@
 
   <div fxLayout="row wrap" fxLayoutAlign="space-around center">
     <button mat-raised-button color="primary" (click)="save()">Save</button>
-  </div>
+  </div> -->
 
 </form>
