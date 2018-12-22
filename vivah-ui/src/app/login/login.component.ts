@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Login } from './login';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import {LoginService} from './login.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -18,12 +19,14 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent implements OnInit {
   loginModel: Login;
+  isError: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private service: LoginService) {
     this.loginModel = {
       emailId: '',
       password: ''
     };
+    this.isError = false;
   }
 
   ngOnInit() {
@@ -41,7 +44,20 @@ export class LoginComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   onLoginClick(){
-    this.router.navigate(['./layout']);
+    this.service.onLogin(this.loginModel).subscribe(
+      (res: any) => {
+        if (res && res.length > 0 && res[0].userId) {
+          sessionStorage.setItem('userId', res[0].userId)
+          this.router.navigate(['./layout']);
+        } else {
+          this.isError = true;
+        }
+      },
+      (error: Error) => {
+        alert("Login Failed");
+      }
+    );
+    
   }
 
 }

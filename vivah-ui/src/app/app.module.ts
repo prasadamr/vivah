@@ -49,6 +49,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 import { LayoutComponent } from './layout/layout.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
@@ -109,7 +110,7 @@ import { AppRoutingModule } from './/app-routing.module';
     MatTooltipModule,
     MatStepperModule
   ],
-  providers: [SignUpUserService],
+  providers: [SignUpUserService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
