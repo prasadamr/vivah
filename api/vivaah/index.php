@@ -370,14 +370,28 @@
 		
 		
 		
-		private function getSignUpUser(){	
+		private function checkLogin(){	
 		
-			// Cross validation if the request method is GET else it will return "Not Acceptable" status
-			if($this->get_request_method() != "GET"){
+		
+		
+			if($this->get_request_method() != "POST"){
 				$this->response('',406);
 			}
 			
-			$strSql = "SELECT * From tbluseraccount Order By userId";
+			
+			$emailId = '';
+			$password = '';
+			
+			
+			if(isset($this->_request['emailId']))
+			{
+				$emailId = $this->_request['emailId'];
+				$password = $this->_request['password'];
+				
+			}
+			
+			
+			$strSql = "SELECT * FROM tbluseraccount WHERE userEmail=='$emailId' AND userPwd=='$password'";
 			
 			$sql = mysql_query($strSql, $this->db);
 		
@@ -394,6 +408,54 @@
 			$this->response('',204);	// If no records "No Content" status
 		}
 	
+		
+		
+		
+		
+		
+		
+		private function deleteUser(){	
+		
+		
+		
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+			
+			
+			
+			$idPersonalDetails = '';
+			
+			
+			if(isset($this->_request['idPersonalDetails']))
+			{
+				$idPersonalDetails = $this->_request['idPersonalDetails'];
+				
+				
+			}
+			
+			
+			$strSql = "DELETE * FROM tblcandidatepersoneldetails WHERE IdPersonalDetails=='$idPersonalDetails'";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+	
+		
+		
+		
+		
 		
 		
 		
