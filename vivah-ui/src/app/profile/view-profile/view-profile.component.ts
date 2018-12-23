@@ -31,4 +31,15 @@ export class ViewProfileComponent implements OnInit {
     );
   }
 
+  deleteProfile(id) {
+    this.service.deleteProfile(id).subscribe(
+      (response)=> {
+        this.getProfiles();
+      },
+      (error) => {
+        alert("Delete Profiles failed");
+      }
+    );
+  }
+
 }
