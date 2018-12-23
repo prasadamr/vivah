@@ -383,15 +383,15 @@
 			$password = '';
 			
 			
-			if(isset($this->_request['emailId']))
+			if(isset($this->_request['EmailId']))
 			{
-				$emailId = $this->_request['emailId'];
-				$password = $this->_request['password'];
+				$emailId = $this->_request['EmailId'];
+				$password = $this->_request['Password'];
 				
 			}
 			
 			
-			$strSql = "SELECT * FROM tbluseraccount WHERE userEmail=='$emailId' AND userPwd=='$password'";
+			$strSql = "SELECT * FROM tbluseraccount WHERE userEmail='$emailId' AND userPwd='$password'";
 			
 			$sql = mysql_query($strSql, $this->db);
 		
