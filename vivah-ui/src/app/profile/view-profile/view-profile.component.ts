@@ -37,4 +37,15 @@ export class ViewProfileComponent implements OnInit {
     this.router.navigate(['/layout/profiles/matching-profile', profile.IdPersonalDetails])
   }
 
+  deleteProfile(id) {
+    this.service.deleteProfile(id).subscribe(
+      (response)=> {
+        this.getProfiles();
+      },
+      (error) => {
+        alert("Delete Profiles failed");
+      }
+    );
+  }
+
 }

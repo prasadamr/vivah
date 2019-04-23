@@ -19,13 +19,14 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent implements OnInit {
   loginModel: Login;
+  isError: boolean;
 
   constructor(private router: Router, private service:LoginService) {
     this.loginModel = {
       emailId: '',
       password: ''
     };
-
+    this.isError = false;
   }
 
   ngOnInit() {
@@ -43,22 +44,20 @@ export class LoginComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   onLoginClick(){
-
-    if(this.loginModel.emailId!="" && this.loginModel.password!="")
-    {
-        this.service.checkLogin(this.loginModel).subscribe(
-          (res: any) => {
-              sessionStorage.setItem('user', JSON.stringify(res));
-             this.router.navigate(['./layout']);
-             alert("login successfully");
-          },
-            (error: Error) => {
-              alert("Email or Password are incorrect.");
-            }
-          );
-
+    this.service.onLogin(this.loginModel).subscribe(
+      (res: any) => {
+        if (res && res.length > 0 && res[0].userId) {
+          sessionStorage.setItem('user', JSON.stringify(res));
+          this.router.navigate(['./layout']);
+        } else {
+          this.isError = true;
+        }
+      },
+      (error: Error) => {
+        alert("Login Failed");
       }
+    );
 
-}
+  }
 
 }

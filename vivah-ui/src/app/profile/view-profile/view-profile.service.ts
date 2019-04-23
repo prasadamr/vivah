@@ -20,4 +20,14 @@ export class ViewProfileService {
         return this._http.get(environment.API_ROOT_PATH + "getProfiles&userId=" + JSON.parse(sessionStorage.getItem('user'))[0].userId, {headers: headers})
                     .map((reponse: Response) => reponse.json());
     }
+
+    deleteProfile(id) {
+        var params = "idPersonalDetails="+id;
+
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+        return this._http.post(environment.API_ROOT_PATH + "deleteUser", params, {headers: headers})
+                    .map((reponse: Response) => reponse.json());
+    }
 }

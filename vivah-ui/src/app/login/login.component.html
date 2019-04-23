@@ -28,6 +28,9 @@
             <div fxLayout="row wrap" fxLayoutAlign="space-around center">
                 <a [routerLink]="'/signUp'" mat-button>Create an account</a>
             </div>
+            <mat-error *ngIf="isError">
+                Email and password is invalid.
+            </mat-error>
         </div>
     </form>
 </div>
