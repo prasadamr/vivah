@@ -38,7 +38,7 @@ export class AddProfileService {
             +"&MobileNumber="+personalDetails.MobileNumber
             +"&PhysicalDisabilities="+personalDetails.PhysicalDisabilities
             +"&AboutMe="+personalDetails.AboutMe
-            +"&UserId="+personalDetails.UserId
+            +"&UserId="+JSON.parse(sessionStorage.getItem('user'))[0].userId
 
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -104,7 +104,8 @@ export class AddProfileService {
             +"&IdSubCaste="+partnerPreference.IdSubCaste
             +"&IdQualification="+partnerPreference.IdQualification
             +"&IdEmployement="+partnerPreference.IdEmployement
-            +"&MyExpectation="+partnerPreference.MyExpectation;
+            +"&MyExpectation="+partnerPreference.MyExpectation
+            +"&IdPersonalDetails="+partnerPreference.IdPersonalDetails;
 
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');

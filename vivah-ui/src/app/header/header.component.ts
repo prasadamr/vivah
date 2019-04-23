@@ -10,9 +10,11 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
 
+  userName: string;
 
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.userName = JSON.parse(sessionStorage.getItem('user')) && JSON.parse(sessionStorage.getItem('user'))[0].userName
+  }
 
   ngOnInit() {
   }

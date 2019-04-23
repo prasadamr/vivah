@@ -4,7 +4,7 @@
         <div class="card-block" align="center">
             <div fxLayout="row wrap" fxLayoutAlign="space-around center">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Email" [(ngModel)]="loginModel.emailId" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Email" [(ngModel)]="loginModel.emailId" [formControl]="emailFormControl" [errorStateMatcher]="matcher" name="emailId" id="emailId">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                 Please enter a valid email address
                 </mat-error>
@@ -15,7 +15,7 @@
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="space-around center">
             <mat-form-field class="example-full-width">
-                <input type="password" matInput placeholder="Password" [(ngModel)]="loginModel.password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
+                <input type="password" matInput placeholder="Password" [(ngModel)]="loginModel.password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher" name="password" id="password">
                 <mat-error *ngIf="emailFormControl.hasError('required')">
                 Password is <strong>required</strong>
                 </mat-error>

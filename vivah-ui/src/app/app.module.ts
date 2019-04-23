@@ -43,6 +43,7 @@ import {
 
 //services
 import { SignUpUserService } from "./signup/signupuser.service";
+import {LoginService} from './login/login.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -109,7 +110,8 @@ import { AppRoutingModule } from './/app-routing.module';
     MatTooltipModule,
     MatStepperModule
   ],
-  providers: [SignUpUserService],
+  providers: [SignUpUserService,
+              LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,6 +10,7 @@ import { ReligionDetailsComponent } from './religion-details/religion-details.co
 import { FamilyDetailsComponent } from './family-details/family-details.component';
 import { ProfessionalDetailsComponent } from './professional-details/professional-details.component';
 import { PartnerPreferencesComponent } from './partner-preferences/partner-preferences.component';
+import { MatchingProfileComponent } from './matching-profile/matching-profile.component';
 
 import { PersonalDetailsService } from './personal-details/personal-details.service';
 import { FamilyDetailsService } from './family-details/family-details.service';
@@ -18,6 +19,7 @@ import { ProfessionalDetailsService } from './professional-details/professional-
 import { PartnerPreferencesService } from './partner-preferences/partner-preferences.service';
 import { AddProfileService } from './add-profile/add-profile.service';
 import { ViewProfileService } from './view-profile/view-profile.service';
+import { MatchingProfileService } from './matching-profile/matching-profile.service';
 
 
 import {
@@ -102,7 +104,8 @@ import {
   PartnerPreferencesComponent,
   ProfessionalDetailsComponent,
   FamilyDetailsComponent,
-  ViewProfileComponent
+  ViewProfileComponent,
+  MatchingProfileComponent
   ],
   providers: [PersonalDetailsService,
               FamilyDetailsService,
@@ -110,7 +113,8 @@ import {
               ProfessionalDetailsService,
               PartnerPreferencesService,
               AddProfileService,
-              ViewProfileService
+              ViewProfileService,
+              MatchingProfileService
               ],
 })
 export class ProfileModule { }

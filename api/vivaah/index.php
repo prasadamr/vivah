@@ -151,7 +151,7 @@
 				$idNakshatra = $this->_request['IdNakshatra'];
 				$idRashi = $this->_request['IdRashi'];
 				
-				$userId = '1';
+				$userId = $this->_request['UserId'];
 				
 				define('UPLOAD_DIR', 'uploads/');
 				
@@ -184,7 +184,7 @@
 			
 			mysql_query($strSql);
 			
-			$success = array('status' => "Success", "msg" => "Your Personal Account Created Successfully.", "id" => 1);
+			$success = array('status' => "Success", "msg" => "Your Personal Account Created Successfully.", "id" => mysql_insert_id());
 			$this->response($this->json($success),200);
 			
 			// If invalid inputs "Bad Request" status message and reason
@@ -277,7 +277,7 @@
 				$marriedBrothers = $this->_request['MarriedBrothers'];
 				$address = $this->_request['Address'];
 				$phoneNumber = $this->_request['PhoneNumber'];
-				$idPersonalDetails = '1';
+				$idPersonalDetails = $this->_request['IdPersonalDetails'];
 				
 			}
 			
@@ -347,12 +347,12 @@
 				$idQualification = $this->_request['IdQualification'];
 				$idEmployement = $this->_request['IdEmployement'];
 				$myExpectation = $this->_request['MyExpectation'];
-				$idPersonalDetails = '1';
+				$idPersonalDetails = $this->_request['IdPersonalDetails'];
 			
 			}
 			
 			
-			$strSql = "Insert Into tblpartnerpreferencerequests(IdGender, MinAge, MaxAge, IdMaritalStatus, MinHieght, MaxHeight, IdEatingHabit, IdDrinkingHabit, IdSmokingHabit, IdMotherTongue, IdReligion, IdCaste, IdSubCaste, IdQualification, IdEmployement, MyExpectation, idPersonalDetails)";
+			$strSql = "Insert Into tblpartnerpreferencerequests(IdGender, MinAge, MaxAge, IdMaritalStatus, MinHieght, MaxHeight, IdEatingHabit, IdDrinkingHabit, IdSmokingHabit, IdMotherTongue, IdReligion, IdCaste, IdSubCaste, IdQualification, IdEmployement, MyExpectation, IdPersonalDetails)";
 			$strSql = $strSql." Values('$idGender', '$minAge', '$maxAge', '$idMaritalStatus', '$minHeight', '$maxHeight', '$idEatingHabit', '$idDrinkingHabit', '$idSmokingHabit', '$idMotherTongue', '$idReligion', '$idCaste', '$idSubCaste', '$idQualification', '$idEmployement', '$myExpectation', '$idPersonalDetails')";
 			
 			mysql_query($strSql);
@@ -383,15 +383,15 @@
 			$password = '';
 			
 			
-			if(isset($this->_request['emailId']))
+			if(isset($this->_request['EmailId']))
 			{
-				$emailId = $this->_request['emailId'];
-				$password = $this->_request['password'];
+				$emailId = $this->_request['EmailId'];
+				$password = $this->_request['Password'];
 				
 			}
 			
 			
-			$strSql = "SELECT * FROM tbluseraccount WHERE userEmail=='$emailId' AND userPwd=='$password'";
+			$strSql = "SELECT * FROM tbluseraccount WHERE userEmail='$emailId' AND userPwd='$password'";
 			
 			$sql = mysql_query($strSql, $this->db);
 		
@@ -405,7 +405,7 @@
 				$this->response($this->json($result), 200);
 			}
 			
-			$this->response('',204);	// If no records "No Content" status
+			$this->response('',400);	// If no records "No Content" status
 		}
 	
 		
@@ -435,7 +435,7 @@
 			}
 			
 			
-			$strSql = "DELETE * FROM tblcandidatepersoneldetails WHERE IdPersonalDetails=='$idPersonalDetails'";
+			$strSql = "DELETE * FROM tblcandidatepersoneldetails WHERE IdPersonalDetails='$idPersonalDetails'";
 			
 			$sql = mysql_query($strSql, $this->db);
 		
@@ -881,8 +881,9 @@
 			if($this->get_request_method() != "GET"){
 				$this->response('',406);
 			}
+			$userId=$this->_request["userId"];
 			
-			$strSql = "SELECT * From tblcandidatepersoneldetails Order By IdPersonalDetails";
+			$strSql = "SELECT * From tblcandidatepersoneldetails WHERE userId='$userId' Order By IdPersonalDetails";
 			
 			$sql = mysql_query($strSql, $this->db);
 		
@@ -910,6 +911,36 @@
 		}
 	
 	
+	
+	/* get matching profiles*/
+
+    private function getMatchingProfiles(){
+		
+		// Cross validation if the request method is GET else it will return "Not Acceptable" status
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+		    $idProfile=$this->_request["profileId"];
+			
+			$strSql = "SELECT * From tblcandidatepersoneldetails as pd join tblpartnerpreferencerequests as pp on pd.IdPersonalDetails != pp.IdPersonalDetails WHERE pp.IdPersonalDetails = 74 and pp.IdGender = pd.IdGender and pp.MinHieght >= pd.Height and pp.MaxHeight <= pd.Height and pp.IdEatingHabit = pd.IdEatingHabit and pp.IdReligion = pd.IdReligion and pp.IdCaste = pd.IdCaste and pp.IdSubCaste = pd.IdSubCaste and pp.MinAge <= DATEDIFF(pd.DOB, CURDATE())/365.25 and pp.MaxAge >= DATEDIFF(pd.DOB, CURDATE())/365.25";
+			
+			$sql = mysql_query($strSql, $this->db);
+		
+			if(mysql_num_rows($sql) > 0){
+				$result = array();
+				while($rlt = mysql_fetch_array($sql,MYSQL_ASSOC)){
+					$result[] = $rlt;
+				}
+				
+				// If success everythig is good send header as "OK" and return list of users in JSON format
+				$this->response($this->json($result), 200);
+			}
+			
+			$this->response('',204);	// If no records "No Content" status
+		
+		
+	}
 	
 		
 		/*
